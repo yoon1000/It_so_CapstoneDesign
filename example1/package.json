@@ -1,0 +1,17 @@
+{
+  "name": "example1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node muse"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "dependencies": {
+    "node-mysql": "^0.4.2"
+  }
+}
