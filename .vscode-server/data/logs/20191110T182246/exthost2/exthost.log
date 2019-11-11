@@ -1,0 +1,12 @@
+[2019-11-10 19:48:27.930] [exthost] [info] extension host started
+[2019-11-10 19:48:28.093] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:javascript"}
+[2019-11-10 19:48:28.093] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/typescript-language-features/dist/extension
+[2019-11-10 19:48:28.149] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2019-11-10 19:48:28.149] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/debug-auto-launch/dist/extension
+[2019-11-10 19:48:28.156] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2019-11-10 19:48:28.157] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/emmet/dist/extension
+[2019-11-10 19:48:28.199] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2019-11-10 19:48:28.199] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/git/dist/main
+[2019-11-10 19:48:28.278] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2019-11-10 19:48:28.278] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/merge-conflict/dist/extension
+[2019-11-10 19:48:28.289] [exthost] [info] eager extensions activated

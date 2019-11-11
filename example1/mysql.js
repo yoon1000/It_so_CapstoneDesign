@@ -1,11 +1,19 @@
-var mysql = require('mysql');
-
+var mysql      = require('mysql');
 var connection = mysql.createConnection({
-    host : '101.101.165.82',
-    port : 18081,
-    user : 'root',
-    password : 'mysql',
-    database : 'muse'
-})
+  host     : '101.101.165.82',
+  user     : 'root',
+  password : 'mysql',
+  port     : 18081,
+  database : 'muse'
+});
 
-module.exports = connection;
+connection.connect();
+
+connection.query('SELECT * from USER', function(err, rows, fields) {
+  if (!err)
+    console.log('User: ', rows);
+  else
+    console.log('Error while performing Query.', err);
+
+    connection.end();
+});

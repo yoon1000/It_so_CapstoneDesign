@@ -1,0 +1,39 @@
+[2019-11-11 12:09:25.840] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-11-11 12:09:25.840] [remoteagent] [info] Extension host agent started.
+[2019-11-11 12:09:26.513] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] New connection established.
+[2019-11-11 12:09:26.514] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] New connection established.
+[2019-11-11 12:09:26.714] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] <15195> Launched Extension Host Process.
+[2019-11-11 12:48:04.085] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has reconnected.
+[2019-11-11 12:48:08.656] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 13:00:46.623] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has reconnected.
+[2019-11-11 13:00:46.624] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 13:27:29.725] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has reconnected.
+[2019-11-11 13:27:29.729] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 13:33:37.966] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has reconnected.
+[2019-11-11 13:33:37.971] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 14:59:45.378] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has reconnected.
+[2019-11-11 14:59:49.832] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 16:18:02.222] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has reconnected.
+[2019-11-11 16:18:06.533] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 17:10:05.995] [remoteagent] [info] [127.0.0.1][f8c6c8cd][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2019-11-11 17:10:07.021] [remoteagent] [info] [127.0.0.1][8c21e7b4][ExtensionHostConnection] <15195> Extension Host Process exited with code: 0, signal: null.
+[2019-11-11 17:10:07.021] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2019-11-11 17:10:10.797] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2019-11-11 17:10:10.797] [remoteagent] [info] Cancelling previous shutdown timeout
+[2019-11-11 17:10:10.887] [remoteagent] [info] [127.0.0.1][11065008][ManagementConnection] New connection established.
+[2019-11-11 17:10:10.888] [remoteagent] [info] [127.0.0.1][2e1d98a9][ExtensionHostConnection] New connection established.
+[2019-11-11 17:10:10.893] [remoteagent] [info] [127.0.0.1][2e1d98a9][ExtensionHostConnection] <1913> Launched Extension Host Process.
+[2019-11-11 17:15:10.797] [remoteagent] [info] New EH opened, aborting shutdown
+[2019-11-11 17:44:48.506] [remoteagent] [info] [127.0.0.1][2e1d98a9][ExtensionHostConnection] The client has reconnected.
+[2019-11-11 17:44:48.507] [remoteagent] [info] [127.0.0.1][11065008][ManagementConnection] The client has reconnected.
+[2019-11-11 18:21:43.720] [remoteagent] [info] [127.0.0.1][11065008][ManagementConnection] The client has reconnected.
+[2019-11-11 18:21:43.721] [remoteagent] [info] [127.0.0.1][2e1d98a9][ExtensionHostConnection] The client has reconnected.

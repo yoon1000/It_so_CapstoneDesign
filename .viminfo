@@ -46,18 +46,20 @@
 	s
 
 # File marks:
-'0  1  114  ~/id_rsa_hyein.pub
-'1  1  0  ~/.ssh/id_rsa_hyein.pub
-'2  1  0  ~/.ssh/id_rsa.pub
-'3  7  0  /etc/xrdp/startwm.sh
-'4  1  0  ~/example1/package.json
-'5  1  0  /id_rsa.pub
-'6  1  0  /etc/ssh/sshd_config
-'7  1  0  /etc/rc.local
-'8  16  0  /etc/rc.local
-'9  23  1  /tmp/crontab.TSzN8k/crontab
+'0  1  0  ~/.ssh/authorized_keys
+'1  9  0  ~/.ssh/authorized_keys
+'2  1  114  ~/id_rsa_hyein.pub
+'3  1  0  ~/.ssh/id_rsa_hyein.pub
+'4  1  0  ~/.ssh/id_rsa.pub
+'5  7  0  /etc/xrdp/startwm.sh
+'6  1  0  ~/example1/package.json
+'7  1  0  /id_rsa.pub
+'8  1  0  /etc/ssh/sshd_config
+'9  1  0  /etc/rc.local
 
 # Jumplist (newest first):
+-'  1  0  ~/.ssh/authorized_keys
+-'  9  0  ~/.ssh/authorized_keys
 -'  1  114  ~/id_rsa_hyein.pub
 -'  1  0  ~/.ssh/id_rsa_hyein.pub
 -'  1  0  ~/.ssh/id_rsa.pub
@@ -153,11 +155,11 @@
 -'  16  0  /etc/rc.local
 -'  23  1  /tmp/crontab.TSzN8k/crontab
 -'  1  0  /tmp/crontab.TSzN8k/crontab
--'  138  0  /etc/wgetrc
--'  1  0  /etc/wgetrc
--'  1  0  ~/.ssh/id_rsa_hyein.pub
 
 # History of marks within files (newest to oldest):
+
+> ~/.ssh/authorized_keys
+	"	1	0
 
 > ~/id_rsa_hyein.pub
 	"	1	114

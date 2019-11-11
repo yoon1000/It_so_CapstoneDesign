@@ -375,3 +375,88 @@ cd ..
 cat id_rsa_hyein.pub >> ~/.ssh/authorized_keys
 ls
 vi id_rsa_hyein.pub 
+git status
+git add .
+git status
+git commit -m "nodejsServer"
+git push
+git push origin master
+git pull
+git push origin master
+git pull
+git add .
+git commit -m "nodejsServer"
+git push origin master
+git init
+rm -rf .git
+git init
+rm -rf .git
+git init
+git status
+git add .
+git status
+git config --global user.email "k9779k@naver.com"
+git commit -m "nodejsServerPush"
+git log
+git remote add origin https://github.com/yoon1000/It_so_CapstoneDesign.git
+git remote
+git push origin master
+git status
+git pull
+git push origin master
+git pull
+git branch
+git branch --set-upstream-to=origin/master master
+git pull
+git push origin master
+ls
+cd .ssh/
+ls
+vi authorized_keys
+ls 
+cd ..
+ls
+cd .ssh/
+ls
+cat >> authorized_keys
+ls
+vi authorized_keys
+service ssh start
+node app.js
+ls
+cd example1/
+ls
+node app.ja
+node app.js
+node mysql.js
+npm install --save mysql
+node mysql.js
+npm install express --save
+node mysql.js
+mysql -v
+mysql -version
+node mysql.js
+ls
+cd example1/
+ls
+cd mysql.js
+node mysql.js
+mysql -version
+node app.js
+node mysql.js
+node app.js
+node node.js
+node mysql.js
+git remote add origin https://github.com/yoon1000/It_so_CapstoneDesign
+ls
+show datbases;
+cd ..
+ls
+mysql -uroot -pmysql
+node muse
+ls
+cd example1
+node muse
+ls
+node mysql.js
+node -v

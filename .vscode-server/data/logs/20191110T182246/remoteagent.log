@@ -1,0 +1,27 @@
+[2019-11-10 18:22:46.240] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-11-10 18:22:46.240] [remoteagent] [info] Extension host agent started.
+[2019-11-10 18:22:46.762] [remoteagent] [info] [127.0.0.1][469a782d][ManagementConnection] New connection established.
+[2019-11-10 18:22:46.763] [remoteagent] [info] [127.0.0.1][d5a76eab][ExtensionHostConnection] New connection established.
+[2019-11-10 18:22:46.877] [remoteagent] [info] [127.0.0.1][d5a76eab][ExtensionHostConnection] <31553> Launched Extension Host Process.
+[2019-11-10 19:45:35.204] [remoteagent] [info] [127.0.0.1][469a782d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2019-11-10 19:45:36.226] [remoteagent] [info] [127.0.0.1][d5a76eab][ExtensionHostConnection] <31553> Extension Host Process exited with code: 0, signal: null.
+[2019-11-10 19:45:36.227] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2019-11-10 19:48:27.427] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2019-11-10 19:48:27.427] [remoteagent] [info] Cancelling previous shutdown timeout
+[2019-11-10 19:48:27.515] [remoteagent] [info] [127.0.0.1][37f97a15][ManagementConnection] New connection established.
+[2019-11-10 19:48:27.515] [remoteagent] [info] [127.0.0.1][1aba366d][ExtensionHostConnection] New connection established.
+[2019-11-10 19:48:27.521] [remoteagent] [info] [127.0.0.1][1aba366d][ExtensionHostConnection] <3414> Launched Extension Host Process.
+[2019-11-10 19:53:27.428] [remoteagent] [info] New EH opened, aborting shutdown
+[2019-11-10 20:01:24.091] [remoteagent] [info] [127.0.0.1][37f97a15][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2019-11-10 20:01:25.114] [remoteagent] [info] [127.0.0.1][1aba366d][ExtensionHostConnection] <3414> Extension Host Process exited with code: 0, signal: null.
+[2019-11-10 20:01:25.114] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2019-11-10 20:06:25.215] [remoteagent] [info] Last EH closed, shutting down

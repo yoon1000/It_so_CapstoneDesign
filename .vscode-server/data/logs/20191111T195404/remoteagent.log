@@ -1,0 +1,20 @@
+[2019-11-11 19:54:04.176] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-11-11 19:54:04.176] [remoteagent] [info] Extension host agent started.
+[2019-11-11 19:54:05.129] [remoteagent] [info] [127.0.0.1][a7131043][ManagementConnection] New connection established.
+[2019-11-11 19:54:05.131] [remoteagent] [info] [127.0.0.1][29580580][ExtensionHostConnection] New connection established.
+[2019-11-11 19:54:05.267] [remoteagent] [info] [127.0.0.1][29580580][ExtensionHostConnection] <16735> Launched Extension Host Process.
+[2019-11-11 19:54:07.633] [remoteagent] [info] Installing extension: ms-ceintl.vscode-language-pack-ko
+[2019-11-11 19:54:07.930] [remoteagent] [info] Downloaded extension: ms-ceintl.vscode-language-pack-ko /tmp/e0fbd9c0-c627-4ba2-864f-e61dbcd0672b
+[2019-11-11 19:54:08.219] [remoteagent] [info] Extracted extension to /root/.vscode-server/extensions/.ms-ceintl.vscode-language-pack-ko-1.40.2: ms-ceintl.vscode-language-pack-ko
+[2019-11-11 19:54:08.220] [remoteagent] [info] Renamed to /root/.vscode-server/extensions/ms-ceintl.vscode-language-pack-ko-1.40.2
+[2019-11-11 19:54:08.221] [remoteagent] [info] Installation completed. ms-ceintl.vscode-language-pack-ko
+[2019-11-11 19:54:08.229] [remoteagent] [info] Extensions installed successfully: ms-ceintl.vscode-language-pack-ko
