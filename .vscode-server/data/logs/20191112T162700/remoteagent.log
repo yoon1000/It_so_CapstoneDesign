@@ -1,0 +1,18 @@
+[2019-11-12 16:27:00.721] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-11-12 16:27:00.721] [remoteagent] [info] Extension host agent started.
+[2019-11-12 16:27:00.749] [remoteagent] [info] Deleted from disk ms-ceintl.vscode-language-pack-ko /root/.vscode-server/extensions/ms-ceintl.vscode-language-pack-ko-1.39.3
+[2019-11-12 16:27:01.441] [remoteagent] [error] [127.0.0.1][a7131043][ManagementConnection] Unknown reconnection token.
+[2019-11-12 16:27:01.445] [remoteagent] [error] [127.0.0.1][29580580][ExtensionHostConnection] Unknown reconnection token.
+[2019-11-12 17:01:58.873] [remoteagent] [info] [127.0.0.1][197194ee][ManagementConnection] New connection established.
+[2019-11-12 17:01:58.876] [remoteagent] [info] [127.0.0.1][e26086a6][ExtensionHostConnection] New connection established.
+[2019-11-12 17:01:58.971] [remoteagent] [info] [127.0.0.1][e26086a6][ExtensionHostConnection] <25925> Launched Extension Host Process.
+[2019-11-12 18:24:16.778] [remoteagent] [error] [File Watcher (chokidar)] Inotify limit reached (ENOSPC)

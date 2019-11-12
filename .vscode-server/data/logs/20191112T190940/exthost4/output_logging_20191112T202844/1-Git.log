@@ -1,0 +1,31 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+> git config --get commit.template
+Open repository: /root
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.0/example1/index.html
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/example1/app.js
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/example1/mysql-db.js
+> git ls-files --stage -- Muse_V1.0/example1/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.0/example1/mysql-db.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.0/example1/
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose

@@ -1,0 +1,228 @@
+다음에서 git을 찾는 중: git
+git에서 git 2.7.4을(를) 사용하는 중
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+> git config --get commit.template
+Open repository: /root
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git show :example1/routes/users.js
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git show :example1/routes/users.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :example1/routes/users.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :example1/routes/users.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :example1/routes/users.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/.gitconfig
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/package.json
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/public/tooltip.html
+> git ls-files --stage -- Muse_V1.1/public/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :example1/routes/users.js
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.0/example1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.0/example1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.0/example1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.0/example1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.0/example1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.0/example1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/views/index.jade
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/error.jade
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/index.jade
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/public/index.html
+> git ls-files --stage -- Muse_V1.1/public/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/server.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/mysql-db.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/mysql.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/LICENSE
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/jenkins_Test
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/index.html
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/index.html
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/public/index.html
+> git ls-files --stage -- Muse_V1.1/public/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/public/js/main.js
+> git ls-files --stage -- Muse_V1.1/public/js/
+> git check-ignore -v -z --stdin
+git.getSCMResource.uri file:///root/Muse_V1.1/public/js/main.js
+repo root /root
+git.getSCMResource.uri file:///root/Muse_V1.1/public/js/main.js
+repo root /root
+> git show :Muse_V1.1/public/js/jquery-3.3.1.min.js
+> git ls-files --stage -- Muse_V1.1/public/js/
+> git show :Muse_V1.1/public/js/popper.min.js
+> git ls-files --stage -- Muse_V1.1/public/js/
+> git show :Muse_V1.1/public/js/main.js
+> git ls-files --stage -- Muse_V1.1/public/js/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/public/vendor/chartjs/Chart.bundle.js
+> git ls-files --stage -- Muse_V1.1/public/vendor/chartjs/
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.0/example1/routes/index.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/
+> git show :Muse_V1.0/example1/routes/users.js
+> git ls-files --stage -- Muse_V1.0/example1/routes/
+> git show :Muse_V1.0/example1/app.js
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/example1/index.html
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/example1/mysql-db.js
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/example1/mysql.js
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/example1/package.json
+> git ls-files --stage -- Muse_V1.0/example1/
+> git show :Muse_V1.0/jenkins_Test
+> git ls-files --stage -- Muse_V1.0/
+> git show :Muse_V1.0/LICENSE
+> git ls-files --stage -- Muse_V1.0/
+> git show :Muse_V1.0/npm-debug.log
+> git ls-files --stage -- Muse_V1.0/
+git.getSCMResource.uri file:///root/Muse_V1.0/npm-debug.log
+repo root /root
+git.getSCMResource.uri file:///root/Muse_V1.0/npm-debug.log
+repo root /root

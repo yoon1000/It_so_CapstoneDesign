@@ -1,0 +1,351 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+> git config --get commit.template
+Open repository: /root
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/jenkins_Test
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/LICENSE
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/server.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :.viminfo
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/.bash_history
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.2/public/css/style.css
+> git ls-files --stage -- Muse_V1.2/public/css/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+git.getSCMResource.uri file:///root/Muse_V1.1/routes/studentInfo/subject.js
+repo root /root
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/package.json
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.xsession
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.wget-hsts
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.xsession
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.viminfo
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.travis.yml
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.selected_editor
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.profile
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.node_repl_history
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.bashrc
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/.bash_history
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/views/vendor/chosen_v1.8.7/index.html
+> git ls-files --stage -- Muse_V1.1/views/vendor/chosen_v1.8.7/
+> git show :Muse_V1.1/views/vendor/chosen_v1.8.7/index.proto.html
+> git ls-files --stage -- Muse_V1.1/views/vendor/chosen_v1.8.7/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/views/vendor/materializeicon/material-icons.css
+> git ls-files --stage -- Muse_V1.1/views/vendor/materializeicon/
+> git show :Muse_V1.1/views/css/style.css
+> git ls-files --stage -- Muse_V1.1/views/css/
+> git show :Muse_V1.1/views/vendor/chosen_v1.8.7/index.proto.html
+> git ls-files --stage -- Muse_V1.1/views/vendor/chosen_v1.8.7/
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/vendor/materializeicon/material-icons.css
+> git ls-files --stage -- Muse_V1.1/views/vendor/materializeicon/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.2/public/css/style.css
+> git ls-files --stage -- Muse_V1.2/public/css/
+> git show :Muse_V1.1/views/vendor/materializeicon/material-icons.css
+> git ls-files --stage -- Muse_V1.1/views/vendor/materializeicon/
+> git show :Muse_V1.1/views/index.ejs
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.2/public/login.html
+> git ls-files --stage -- Muse_V1.2/public/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.2/public/login.html
+> git ls-files --stage -- Muse_V1.2/public/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.2/app.js
+> git ls-files --stage -- Muse_V1.2/
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.2/app.js
+> git ls-files --stage -- Muse_V1.2/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/views/vendor/materializeicon/material-icons.css
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/vendor/chosen_v1.8.7/index.html
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/.xsession
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/public/profile.html
+> git ls-files --stage -- Muse_V1.1/public/
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/error.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/views/index.ejs
+> git ls-files --stage -- Muse_V1.1/views/
+> git show :Muse_V1.1/public/login.html
+> git ls-files --stage -- Muse_V1.1/public/
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/app.js
+> git ls-files --stage -- Muse_V1.1/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git pull --tags origin featrue/design
+From https://github.com/yoon1000/It_so_CapstoneDesign
+ * branch            featrue/design -> FETCH_HEAD
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git pull --tags origin featrue/design
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+From https://github.com/yoon1000/It_so_CapstoneDesign
+ * branch            featrue/design -> FETCH_HEAD
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git checkout -q featrue/design
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git pull --tags origin featrue/design
+From https://github.com/yoon1000/It_so_CapstoneDesign
+ * branch            featrue/design -> FETCH_HEAD
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin

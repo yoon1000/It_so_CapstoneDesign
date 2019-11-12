@@ -1,0 +1,28 @@
+[2019-11-12 19:09:41.040] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2019-11-12 19:09:41.040] [remoteagent] [info] Extension host agent started.
+[2019-11-12 19:09:41.417] [remoteagent] [info] [127.0.0.1][b800e649][ManagementConnection] New connection established.
+[2019-11-12 19:09:41.418] [remoteagent] [info] [127.0.0.1][1b710a88][ExtensionHostConnection] New connection established.
+[2019-11-12 19:09:41.552] [remoteagent] [info] [127.0.0.1][1b710a88][ExtensionHostConnection] <4451> Launched Extension Host Process.
+[2019-11-12 19:09:55.100] [remoteagent] [info] [127.0.0.1][94b0fd00][ManagementConnection] New connection established.
+[2019-11-12 19:09:55.101] [remoteagent] [info] [127.0.0.1][ec8bd5e6][ExtensionHostConnection] New connection established.
+[2019-11-12 19:09:55.107] [remoteagent] [info] [127.0.0.1][ec8bd5e6][ExtensionHostConnection] <4552> Launched Extension Host Process.
+[2019-11-12 19:09:59.703] [remoteagent] [error] [File Watcher (chokidar)] Inotify limit reached (ENOSPC)
+[2019-11-12 20:06:36.168] [remoteagent] [info] [127.0.0.1][b800e649][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2019-11-12 20:06:37.178] [remoteagent] [info] [127.0.0.1][1b710a88][ExtensionHostConnection] <4451> Extension Host Process exited with code: 0, signal: null.
+[2019-11-12 20:27:58.516] [remoteagent] [info] [127.0.0.1][b7d954f2][ExtensionHostConnection] New connection established.
+[2019-11-12 20:27:58.516] [remoteagent] [info] [127.0.0.1][b191e7eb][ManagementConnection] New connection established.
+[2019-11-12 20:27:58.524] [remoteagent] [info] [127.0.0.1][b7d954f2][ExtensionHostConnection] <9251> Launched Extension Host Process.
+[2019-11-12 20:28:41.371] [remoteagent] [info] [127.0.0.1][b191e7eb][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2019-11-12 20:28:42.386] [remoteagent] [info] [127.0.0.1][b7d954f2][ExtensionHostConnection] <9251> Extension Host Process exited with code: 0, signal: null.
+[2019-11-12 20:28:43.325] [remoteagent] [info] [127.0.0.1][38a9cf8c][ManagementConnection] New connection established.
+[2019-11-12 20:28:43.326] [remoteagent] [info] [127.0.0.1][f4715771][ExtensionHostConnection] New connection established.
+[2019-11-12 20:28:43.336] [remoteagent] [info] [127.0.0.1][f4715771][ExtensionHostConnection] <9396> Launched Extension Host Process.

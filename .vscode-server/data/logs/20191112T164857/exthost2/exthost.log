@@ -1,0 +1,22 @@
+[2019-11-12 16:49:25.697] [exthost] [info] extension host started
+[2019-11-12 16:49:25.837] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:javascript"}
+[2019-11-12 16:49:25.838] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/typescript-language-features/dist/extension
+[2019-11-12 16:49:25.901] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2019-11-12 16:49:25.901] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/debug-auto-launch/dist/extension
+[2019-11-12 16:49:25.905] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2019-11-12 16:49:25.905] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/emmet/dist/extension
+[2019-11-12 16:49:25.960] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2019-11-12 16:49:25.960] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/git/dist/main
+[2019-11-12 16:49:26.098] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2019-11-12 16:49:26.098] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/merge-conflict/dist/extension
+[2019-11-12 16:49:26.105] [exthost] [info] eager extensions activated
+[2019-11-12 17:32:38.538] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:typescript"}
+[2019-11-12 17:32:38.538] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/extension-editing/dist/extension
+[2019-11-12 17:44:48.891] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:json"}
+[2019-11-12 17:44:48.891] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/configuration-editing/dist/extension
+[2019-11-12 17:44:48.892] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:json"}
+[2019-11-12 17:44:48.892] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/json-language-features/client/dist/jsonMain
+[2019-11-12 17:44:48.892] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"extensionId":{"value":"vscode.npm","_lower":"vscode.npm"},"activationEvent":"onLanguage:json"}
+[2019-11-12 17:44:48.892] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/npm/dist/main
+[2019-11-12 17:58:55.694] [exthost] [info] ExtensionService#_doActivateExtension vscode.html-language-features {"startup":false,"extensionId":{"value":"vscode.html-language-features","_lower":"vscode.html-language-features"},"activationEvent":"onLanguage:html"}
+[2019-11-12 17:58:55.694] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/html-language-features/client/dist/htmlMain

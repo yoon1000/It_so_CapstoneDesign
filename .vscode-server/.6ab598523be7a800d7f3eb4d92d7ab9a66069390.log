@@ -1,0 +1,49 @@
+
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+IP Address: 10.41.2.170
+Extension host agent listening on 42412
+
+
+[19:09:41] Extension host agent started.
+[19:09:41] [127.0.0.1][b800e649][ManagementConnection] New connection established.
+[19:09:41] [127.0.0.1][1b710a88][ExtensionHostConnection] New connection established.
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+[19:09:41] [127.0.0.1][1b710a88][ExtensionHostConnection] <4451> Launched Extension Host Process.
+[19:09:55] [127.0.0.1][94b0fd00][ManagementConnection] New connection established.
+[19:09:55] [127.0.0.1][ec8bd5e6][ExtensionHostConnection] New connection established.
+[19:09:55] [127.0.0.1][ec8bd5e6][ExtensionHostConnection] <4552> Launched Extension Host Process.
+[19:09:59] [File Watcher (chokidar)] Inotify limit reached (ENOSPC)
+%c[IPC Library: File Watcher (chokidar)] %cUnhandled Promise Rejection:  color: blue color:  Canceled: Canceled
+    at Object.t.canceled (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/out/vs/platform/files/node/watcher/unix/watcherApp.js:10:952)
+    at u.cancel (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/out/vs/platform/files/node/watcher/unix/watcherApp.js:34:522)
+    at t.ThrottledDelayer.cancel (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/out/vs/platform/files/node/watcher/unix/watcherApp.js:34:916)
+    at Object.stop (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/out/vs/platform/files/node/watcher/unix/watcherApp.js:134:495)
+    at d.stop (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/out/vs/platform/files/node/watcher/unix/watcherApp.js:136:130)
+    at FSWatcher.y.on.e (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/out/vs/platform/files/node/watcher/unix/watcherApp.js:135:967)
+    at FSWatcher.emit (events.js:182:13)
+    at FSWatcher._handleError (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/node_modules/chokidar/index.js:596:10)
+    at NodeFsHandler._boundHandleError (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/node_modules/chokidar/lib/nodefs-handler.js:251:43)
+    at createFsWatchInstance (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/node_modules/chokidar/lib/nodefs-handler.js:66:5)
+    at setFsWatchListener (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/node_modules/chokidar/lib/nodefs-handler.js:113:15)
+    at NodeFsHandler._watchWithNodeFs (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/node_modules/chokidar/lib/nodefs-handler.js:279:14)
+    at NodeFsHandler._handleDir (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/node_modules/chokidar/lib/nodefs-handler.js:490:19)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[20:06:36] [127.0.0.1][b800e649][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:06:37] [127.0.0.1][1b710a88][ExtensionHostConnection] <4451> Extension Host Process exited with code: 0, signal: null.
+[20:27:58] [127.0.0.1][b7d954f2][ExtensionHostConnection] New connection established.
+[20:27:58] [127.0.0.1][b191e7eb][ManagementConnection] New connection established.
+[20:27:58] [127.0.0.1][b7d954f2][ExtensionHostConnection] <9251> Launched Extension Host Process.
+[20:28:41] [127.0.0.1][b191e7eb][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:28:42] [127.0.0.1][b7d954f2][ExtensionHostConnection] <9251> Extension Host Process exited with code: 0, signal: null.
+[20:28:43] [127.0.0.1][38a9cf8c][ManagementConnection] New connection established.
+[20:28:43] [127.0.0.1][f4715771][ExtensionHostConnection] New connection established.
+[20:28:43] [127.0.0.1][f4715771][ExtensionHostConnection] <9396> Launched Extension Host Process.
