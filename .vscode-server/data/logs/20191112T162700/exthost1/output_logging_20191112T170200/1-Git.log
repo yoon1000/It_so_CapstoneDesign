@@ -2878,3 +2878,27 @@ Everything up-to-date
 > git for-each-ref --format %(refname) %(objectname) --sort -committerdate
 > git remote --verbose
 > git config --get commit.template
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :Muse_V1.1/routes/users.js
+> git ls-files --stage -- Muse_V1.1/routes/
+> git show :Muse_V1.1/routes/index.js
+> git ls-files --stage -- Muse_V1.1/routes/

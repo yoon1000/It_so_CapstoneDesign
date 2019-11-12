@@ -349,3 +349,83 @@ From https://github.com/yoon1000/It_so_CapstoneDesign
 > git for-each-ref --format %(refname) %(objectname) --sort -committerdate
 > git remote --verbose
 > git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git check-ignore -v -z --stdin
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /root/Muse_V1.2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git push origin featrue/design
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/yoon1000/It_so_CapstoneDesign.git/'
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git status -z -u
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git show :Muse_V1.1/routes/studentInfo/subject.js
+> git ls-files --stage -- Muse_V1.1/routes/studentInfo/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /root/Muse_V1.1
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featrue/design
+> git rev-parse --symbolic-full-name featrue/design@{u}
+> git rev-list --left-right featrue/design...refs/remotes/origin/featrue/design
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
