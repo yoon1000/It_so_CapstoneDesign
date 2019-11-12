@@ -1,21 +1,471 @@
 doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    title Document
-  body
-    h3 로그인
-    form(action='/users/login', method='post')
-      table
-        tbody
-          tr
-            td 아이디 :
-            td
-              input(type='text', name='userEmail')
-          tr
-            td 비번 :
-            td
-              input(type='password', name='password')
-          tr
-            td
-              input(type='submit', value='로그인')
+html.pink-theme(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no')
+        meta(name='description', content='')
+        meta(name='author', content='Maxartkiller')
+        title Shop · GoFruit
+        // Material design icons CSS
+        link(rel='stylesheet', href='vendor/materializeicon/material-icons.css')
+        // Roboto fonts CSS
+        link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap', rel='stylesheet')
+        // Bootstrap core CSS
+        link(href='vendor/bootstrap-4.3.1/css/bootstrap.min.css', rel='stylesheet')
+        // Swiper CSS
+        link(href='vendor/swiper/css/swiper.min.css', rel='stylesheet')
+        // Custom styles for this template
+        link(href='css/style.css', rel='stylesheet')
+    body
+        .row.no-gutters.vh-100.loader-screen
+            .col.align-self-center.text-white.text-center
+                img(src='img/logo.png', alt='logo')
+                h1
+                    span.font-weight-light Go
+                    | Fruit
+                .laoderhorizontal
+                    div
+                    div
+                    div
+                    div
+        .sidebar
+            .text-center
+                .figure-menu.shadow
+                    figure
+                        img(src='img/user1.png', alt='')
+                h5.mb-1 Ammy Jahnson
+                p.text-mute.small Sydney, Australia
+            br
+            .row.mx-0
+                .col
+                    .card.mb-3.border-0.shadow-sm.bg-template-light
+                        .card-body
+                            .row
+                                .col
+                                    p.text-secondary.small.mb-0 Balance Available
+                                    h6.text-dark.my-0 $2585.00
+                                .col-auto
+                                    button.btn.btn-default.button-rounded-36.shadow
+                                        i.material-icons add
+                    h5.subtitle.text-uppercase
+                        span Menu
+                    .list-group.main-menu
+                        a.list-group-item.list-group-item-action.active(href='index.html') Store
+                        a.list-group-item.list-group-item-action(href='notification.html')
+                            | Notification
+                            span.badge.badge-dark.text-white 2
+                        a.list-group-item.list-group-item-action(href='all-products.html') All Products
+                        a.list-group-item.list-group-item-action(href='my-order.html') My Order
+                        a.list-group-item.list-group-item-action(href='profile.html') My Profile
+                        a.list-group-item.list-group-item-action(href='controls.html')
+                            | Pages Controls
+                            span.badge.badge-light.ml-2 Check
+                        a.list-group-item.list-group-item-action(href='setting.html') Settings
+                        a.list-group-item.list-group-item-action.mt-4(href='login.html') Logout
+        .wrapper
+            .header
+                .row.no-gutters
+                    .col-auto
+                        button.btn.btn-link.text-dark.menu-btn
+                            img(src='img/menu.png', alt='')
+                            span.new-notification
+                    .col.text-center
+                        img.header-logo(src='img/logo-header.png', alt='')
+                    .col-auto
+                        a.btn.btn-link.text-dark(href='profile.html')
+                            i.material-icons account_circle
+            .container
+                input.form-control.form-control-lg.search.my-3(type='text', placeholder='Search')
+                h6.subtitle Categories
+                .row
+                    // Swiper
+                    .swiper-container.small-slide
+                        .swiper-wrapper
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/orange.png', alt='')
+                                            .col-8
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite_outline
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Citrus
+                                                p.text-secondary.small Oranges, Grapefruit, Mandarins
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/banana-small.png', alt='')
+                                            .col-8
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Tropical
+                                                p.text-secondary.small Bananas, Mangoes
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/grapes.png', alt='')
+                                            .col-9
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite_outline
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Berries
+                                                p.text-secondary.small Strawberries, Raspberries, Blueberries
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/orange.png', alt='')
+                                            .col-8
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite_outline
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Citrus
+                                                p.text-secondary.small Oranges, Grapefruit, Mandarins
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/banana-small.png', alt='')
+                                            .col-8
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Tropical
+                                                p.text-secondary.small Bananas, Mangoes
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/grapes.png', alt='')
+                                            .col-9
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite_outline
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Berries
+                                                p.text-secondary.small Strawberries, Raspberries, Blueberries
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/orange.png', alt='')
+                                            .col-8
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite_outline
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Citrus
+                                                p.text-secondary.small Oranges, Grapefruit, Mandarins
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/banana-small.png', alt='')
+                                            .col-8
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Tropical
+                                                p.text-secondary.small Bananas, Mangoes
+                            .swiper-slide
+                                .card.shadow-sm.border-0
+                                    .card-body
+                                        .row.no-gutters.h-100
+                                            img.small-slide-right(src='img/grapes.png', alt='')
+                                            .col-9
+                                                button.btn.btn-sm.btn-link.p-0
+                                                    i.material-icons.md-18 favorite_outline
+                                                a.text-dark.mb-1.mt-2.h6.d-block(href='all-products.html') Berries
+                                                p.text-secondary.small Strawberries, Raspberries, Blueberries
+                h6.subtitle
+                    | Products
+                    a.float-right.small(href='all-products.html') View All
+                .row
+                    .col-6.col-md-4.col-lg-3.col-xl-2
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                button.btn.btn-sm.btn-link.p-0
+                                    i.material-icons.md-18 favorite_outline
+                                .badge.badge-success.float-right.mt-1 10% off
+                                figure.product-image
+                                    img(src='img/apple.png', alt='')
+                                a.text-dark.mb-1.mt-2.h6.d-block(href='product-details.html') Red Apple
+                                p.text-secondary.small.mb-2 Imported from Simla
+                                h5.text-success.font-weight-normal.mb-0
+                                    | $ 120
+                                    sup .00
+                                p.text-secondary.small.text-mute.mb-0 1.0 kg
+                                button.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right
+                                    i.material-icons.md-18 shopping_cart
+                    .col-6.col-md-4.col-lg-3.col-xl-2
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                button.btn.btn-sm.btn-link.p-0
+                                    i.material-icons.md-18 favorite_outline
+                                .badge.badge-success.float-right.mt-1 10% off
+                                figure.product-image
+                                    img(src='img/grapes2.png', alt='')
+                                a.text-dark.mb-1.mt-2.h6.d-block(href='product-details.html') Green Grapes
+                                p.text-secondary.small.mb-2 Chilled fresh
+                                h5.text-success.font-weight-normal.mb-0
+                                    | $ 100
+                                    sup .00
+                                p.text-secondary.small.text-mute.mb-0 1.0 kg
+                                button.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right
+                                    i.material-icons.md-18 shopping_cart
+                    .col-6.col-md-4.col-lg-3.col-xl-2
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                button.btn.btn-sm.btn-link.p-0
+                                    i.material-icons.md-18 favorite_outline
+                                .badge.badge-primary.float-right.mt-1 10% off
+                                figure.product-image
+                                    img(src='img/orange-2.png', alt='')
+                                a.text-dark.mb-1.mt-2.h6.d-block(href='product-details.html') Orange
+                                p.text-secondary.small.mb-2 Sweet and Juicy
+                                h5.text-success.font-weight-normal.mb-0
+                                    | $ 120
+                                    sup .00
+                                p.text-secondary.small.text-mute.mb-0 1.0 kg
+                                button.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right
+                                    i.material-icons.md-18 shopping_cart
+                    .col-6.col-md-4.col-lg-3.col-xl-2
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                button.btn.btn-sm.btn-link.p-0
+                                    i.material-icons.md-18 favorite_outline
+                                .badge.badge-info.float-right.mt-1 50% off
+                                figure.product-image
+                                    img(src='img/orange-small.png', alt='')
+                                a.text-dark.mb-1.mt-2.h6.d-block(href='product-details.html') Lemon
+                                p.text-secondary.small.mb-2 Most Demanded
+                                h5.text-success.font-weight-normal.mb-0
+                                    | $ 120
+                                    sup .00
+                                p.text-secondary.small.text-mute.mb-0 1.0 kg
+                                button.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right
+                                    i.material-icons.md-18 shopping_cart
+                    .col-6.col-md-4.col-lg-3.col-xl-2
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                button.btn.btn-sm.btn-link.p-0
+                                    i.material-icons.md-18 favorite_outline
+                                .badge.badge-success.float-right.mt-1 10% off
+                                figure.product-image
+                                    img(src='img/apple.png', alt='')
+                                a.text-dark.mb-1.mt-2.h6.d-block(href='product-details.html') Red Apple
+                                p.text-secondary.small.mb-2 Imported from Simla
+                                h5.text-success.font-weight-normal.mb-0
+                                    | $ 120
+                                    sup .00
+                                p.text-secondary.small.text-mute.mb-0 1.0 kg
+                                button.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right
+                                    i.material-icons.md-18 shopping_cart
+                    .col-6.col-md-4.col-lg-3.col-xl-2
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                button.btn.btn-sm.btn-link.p-0
+                                    i.material-icons.md-18 favorite_outline
+                                .badge.badge-success.float-right.mt-1 10% off
+                                figure.product-image
+                                    img(src='img/grapes2.png', alt='')
+                                a.text-dark.mb-1.mt-2.h6.d-block(href='product-details.html') Green Grapes
+                                p.text-secondary.small.mb-2 Chilled fresh
+                                h5.text-success.font-weight-normal.mb-0
+                                    | $ 100
+                                    sup .00
+                                p.text-secondary.small.text-mute.mb-0 1.0 kg
+                                button.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right
+                                    i.material-icons.md-18 shopping_cart
+            .container-fluid.bg-warning.text-white.my-3
+                .row
+                    .container
+                        .row.py-4
+                            .col
+                                h1.text-uppercase.mb-3 20% OFF Season Sale
+                                p.mb-3
+                                    | Use Coupan Code
+                                    br
+                                    span.text-dark DFR0020
+                            .col-5.col-md-3.col-lg-2.col-xl-2
+                                img.mw-100.mt-3(src='img/banana.png', alt='')
+                            .w-100
+                            .col
+                                p Get the all new fresh bananas at very low price
+            .container
+                h6.subtitle Are you looking for:
+                .row
+                    .col
+                        button.btn.btn-lg.btn-light.btn-rounded.shadow-xs.my-1.mr-2 Fresh
+                        button.btn.btn-lg.btn-light.btn-rounded.shadow-xs.my-1.mr-2 $100 - $299
+                        button.btn.btn-lg.btn-light.btn-rounded.shadow-xs.my-1.mr-2 600+
+                        button.btn.btn-lg.btn-light.btn-rounded.shadow-xs.my-1.mr-2 $300 - $599
+                        button.btn.btn-lg.btn-light.btn-rounded.shadow-xs.my-1.mr-2 Deliver Today
+                h6.subtitle News Updates
+                .row
+                    // Swiper
+                    .swiper-container.news-slide
+                        .swiper-wrapper
+                            .swiper-slide
+                                .card.shadow-sm.border-0.bg-dark.text-white
+                                    figure.background
+                                        img(src='img/fresh-orange-juice.jpg', alt='')
+                                    .card-body
+                                        a.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right(href='')
+                                            i.material-icons.md-18 arrow_forward
+                                        h5.small Multipurpose Juice allows you to grow faster
+                                        p.text-mute.small By Anand Mangal
+                            .swiper-slide
+                                .card.shadow-sm.border-0.bg-dark.text-white
+                                    figure.background
+                                        img(src='img/orange-juice.jpg', alt='')
+                                    .card-body
+                                        a.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right(href='')
+                                            i.material-icons.md-18 arrow_forward
+                                        h5.small Multipurpose Juice allows you to grow faster
+                                        p.text-mute.small By Anand Mangal
+                            .swiper-slide
+                                .card.shadow-sm.border-0.bg-dark.text-white
+                                    figure.background
+                                        img(src='img/fresh-orange-juice.jpg', alt='')
+                                    .card-body
+                                        a.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right(href='')
+                                            i.material-icons.md-18 arrow_forward
+                                        h5.small Multipurpose Juice allows you to grow faster
+                                        p.text-mute.small By Anand Mangal
+                            .swiper-slide
+                                .card.shadow-sm.border-0.bg-dark.text-white
+                                    figure.background
+                                        img(src='img/orange-juice.jpg', alt='')
+                                    .card-body
+                                        a.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right(href='')
+                                            i.material-icons.md-18 arrow_forward
+                                        h5.small Multipurpose Juice allows you to grow faster
+                                        p.text-mute.small By Anand Mangal
+                            .swiper-slide
+                                .card.shadow-sm.border-0.bg-dark.text-white
+                                    figure.background
+                                        img(src='img/fresh-orange-juice.jpg', alt='')
+                                    .card-body
+                                        a.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right(href='')
+                                            i.material-icons.md-18 arrow_forward
+                                        h5.small Multipurpose Juice allows you to grow faster
+                                        p.text-mute.small By Anand Mangal
+                            .swiper-slide
+                                .card.shadow-sm.border-0.bg-dark.text-white
+                                    figure.background
+                                        img(src='img/orange-juice.jpg', alt='')
+                                    .card-body
+                                        a.btn.btn-default.button-rounded-36.shadow-sm.float-bottom-right(href='')
+                                            i.material-icons.md-18 arrow_forward
+                                        h5.small Multipurpose Juice allows you to grow faster
+                                        p.text-mute.small By Anand Mangal
+                        // Add Pagination
+                        .swiper-pagination
+            .container.mb-3
+                .row
+                    .col.text-center
+                        h5.subtitle.mb-1 Most Exciting Feature
+                        p.text-secondary Take a look at our services
+                .row.text-center.mt-4
+                    .col-6.col-md-3
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                i.material-icons.mb-4.md-36.text-template card_giftcard
+                                h2 2546
+                                p.text-secondary.text-mute Gift it out
+                    .col-6.col-md-3
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                i.material-icons.mb-4.md-36.text-template subscriptions
+                                h2 635
+                                p.text-secondary.text-mute Monthly Billed
+                    .col-6.col-md-3
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                i.material-icons.mb-4.md-36.text-template local_florist
+                                h2 1542
+                                p.text-secondary.text-mute Eco environment
+                    .col-6.col-md-3
+                        .card.shadow-sm.border-0.mb-4
+                            .card-body
+                                i.material-icons.mb-4.md-36.text-template location_city
+                                h2 154
+                                p.text-secondary.text-mute Four Offices
+            .footer
+                .no-gutters
+                    .col-auto.mx-auto
+                        .row.no-gutters.justify-content-center
+                            .col-auto
+                                a.btn.btn-link-default.active(href='index.html')
+                                    i.material-icons store_mall_directory
+                            .col-auto
+                                a.btn.btn-link-default(href='statistics.html')
+                                    i.material-icons insert_chart_outline
+                            .col-auto
+                                a.btn.btn-default.shadow.centerbutton(href='cart.html')
+                                    i.material-icons local_mall
+                            .col-auto
+                                a.btn.btn-link-default(href='favorite-products.html')
+                                    i.material-icons favorite
+                            .col-auto
+                                a.btn.btn-link-default(href='profile.html')
+                                    i.material-icons account_circle
+        // notification
+        .notification.bg-white.shadow.border-primary
+            .row
+                .col-auto.align-self-center.pr-0
+                    i.material-icons.text-primary.md-36 fullscreen
+                .col
+                    h6 Viewing in Phone?
+                    p.mb-0.text-secondary Double tap to enter into fullscreen mode for each page.
+                .col-auto.align-self-center.pl-0
+                    button.btn.btn-link.closenotification
+                        i.material-icons.text-secondary.text-mute.md-18 close
+        // notification ends
+        // jquery, popper and bootstrap js
+        script(src='js/jquery-3.3.1.min.js')
+        script(src='js/popper.min.js')
+        script(src='vendor/bootstrap-4.3.1/js/bootstrap.min.js')
+        // swiper js
+        script(src='vendor/swiper/js/swiper.min.js')
+        // template custom js
+        script(src='js/main.js')
+        // page level script
+        script.
+            $(window).on('load', function () {
+                /* swiper slider carousel */
+                var swiper = new Swiper('.small-slide', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 0,
+                });
+                var swiper = new Swiper('.news-slide', {
+                    slidesPerView: 5,
+                    spaceBetween: 0,
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                    breakpoints: {
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 0,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 0,
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 0,
+                        },
+                        320: {
+                            slidesPerView: 2,
+                            spaceBetween: 0,
+                        }
+                    }
+                });
+                /* notification view and hide */
+                setTimeout(function () {
+                    $('.notification').addClass('active');
+                    setTimeout(function () {
+                        $('.notification').removeClass('active');
+                    }, 3500);
+                }, 500);
+                $('.closenotification').on('click', function () {
+                    $(this).closest('.notification').removeClass('active')
+                });
+            });
