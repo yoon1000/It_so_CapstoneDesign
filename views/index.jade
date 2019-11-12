@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Document
+  body
+    h3 로그인
+    form(action='/users/login', method='post')
+      table
+        tbody
+          tr
+            td 아이디 :
+            td
+              input(type='text', name='userEmail')
+          tr
+            td 비번 :
+            td
+              input(type='password', name='password')
+          tr
+            td
+              input(type='submit', value='로그인')

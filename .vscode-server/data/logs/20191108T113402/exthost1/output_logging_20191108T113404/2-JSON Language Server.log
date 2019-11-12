@@ -1,5 +1,0 @@
-[Error - 11:34:04 AM] Request textDocument/colorPresentation failed.
-Error: Connection got disposed.
-	at Object.dispose (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/json-language-features/client/dist/jsonMain.js:1:16805)
-	at Object.dispose (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/json-language-features/client/dist/jsonMain.js:1:65261)
-	at e.shutdown.then (/root/.vscode-server/bin/6ab598523be7a800d7f3eb4d92d7ab9a66069390/extensions/json-language-features/client/dist/jsonMain.js:1:62071)
