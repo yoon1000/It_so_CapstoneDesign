@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var mysqlDB = require('./mysql-db');
+var mysqlDB = require('./config/mysql-db');
 mysqlDB.connect(function (err) {
     if (err) {
         console.error('mysql connection error');
