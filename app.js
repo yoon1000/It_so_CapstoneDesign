@@ -7,10 +7,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var subjectRouter = require('./routes/studentInfo/subject');
+var mainRouter = require('./routes/studentInfo/main');
+
 
 var app = express();
 
-var mysqlDB = require('./config/mysql-db');
+var mysqlDB = require('./mysql-db');
 mysqlDB.connect(function (err) {
     if (err) {
         console.error('mysql connection error');
@@ -29,7 +32,7 @@ app.use(function (req, res, next) {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -39,6 +42,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/studentInfo/subject', subjectRouter);
+app.use('/studentInfo/main', mainRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
