@@ -13,7 +13,7 @@ var mainRouter = require('./routes/studentInfo/main');
 
 var app = express();
 
-var mysqlDB = require('./mysql-db');
+var mysqlDB = require('./config/mysql-db');
 mysqlDB.connect(function (err) {
     if (err) {
         console.error('mysql connection error');
