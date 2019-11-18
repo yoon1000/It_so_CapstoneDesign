@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var mysqlDB = require('../config/mysql-db');
+var mysqlDB = require('../../config/mysql-db');
 
 //router.set('view engine', 'ejs');
 //router.set('views', __dirname +'/views');
