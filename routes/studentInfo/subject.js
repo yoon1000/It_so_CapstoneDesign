@@ -68,12 +68,12 @@ router.get('/nonmajorlist', function(req, res, next) {
 router.get('/majorlist/:major_chosen', function(req, res, next) {
     //res.send(req.params);
 
-    var major_chosen = req.params.majorsubject;
+    var major_chosen = req.params.major_chosen;
     //console.log(major);
     //res.send(major_chosen);
 
     var sql = 'select subject_name from majorsubject where major = ?'
-    mysqlDB.query(sql, major_chosen, function(err, majorsubject_list){
+    mysqlDB.query(sql, req.body.major_chosen, function(err, majorsubject_list){
         if(error == null) {
             console.log(majorsubject_list);
             res.json({
