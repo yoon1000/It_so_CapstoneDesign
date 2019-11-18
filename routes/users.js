@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var mysqlDB = require('../config/mysql-db');
+var mysqlDB = require('../mysql-db');
 
 // /users
 
@@ -10,34 +10,34 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-// /* 회원 등록 /users/register */
-// router.post('/register', function(req, res, next) {
-//   var sql = 'insert into user(userID, pw, name, phone, gender) values (?,?,?,?,?);';
-//   mysqlDB.query(sql, [req.body.userID, req.body.pw, req.body.name, req.body.phone, req.body.gender], function(error, info) {
-//     if(error == null) {
-//       console.log(info);
-//       res.json({
-//         "code" : 200,
-//         "result" : "success"
-//       });
-//     }
-//     else{ // 사용자 ID가 중복되면
-//       console.log(error);
-//       res.json({
-//         "code" : 400,
-//         "result" : "failed"
-//       });
-//     }
-//   })
-// });
+/* 회원 등록 /users/register */
+router.post('/register', function(req, res, next) {
+  var sql = 'insert into Student(id, password, name, school, num, major) values (?,?,?,?,?,?);';
+  mysqlDB.query(sql, [req.body.id, req.body.password, req.body.name, req.body.school, req.body.num, req.body.major], function(error, info) {
+    if(error == null) {
+      console.log(info);
+      res.json({
+        "code" : 200,
+        "result" : "success"
+      });
+    }
+    else{ // 사용자 ID가 중복되면
+      console.log(error);
+      res.json({
+        "code" : 400,
+        "result" : "failed"
+      });
+    }
+  })
+});
 
 /* 로그인  /users/login */
 router.post('/login', function(req, res, next) {
-  var sql = 'select * from user where userID = ?';
-  mysqlDB.query(sql, [req.body.userID], function(error, result) {
+  var sql = 'select * from Student where id = ?';
+  mysqlDB.query(sql, [req.body.id], function(error, result) {
     if(error == null) {
       if(result.length > 0) {
-        if(result[0].pw == req.body.pw) {
+        if(result[0].password == req.body.password) {
           console.log('login success');
           res.json({
             "code" : 200,
@@ -65,9 +65,10 @@ router.post('/login', function(req, res, next) {
       res.json({
         "code" : 400,
         "result" : "failed"
-      });      
+      });
     }
   });
 });
+
 
 module.exports = router;
