@@ -65,20 +65,20 @@ router.get('/nonmajorlist', function(req, res, next) {
 
 // /studentInfo/subject/majorlist/:majorParam
 /* 학과 클릭시 해당학과의 전공과목 리스트 가져오기 */
-router.get('/majorlist/:majorsubject', function(req, res, next) {
+router.get('/majorlist/:major_chosen', function(req, res, next) {
     //res.send(req.params);
 
-    var major = req.params.majorsubject;
+    var major_chosen = req.params.majorsubject;
     //console.log(major);
-    res.send(major);
+    //res.send(major_chosen);
 
     var sql = 'select subject_name from majorsubject where major = ?'
-    mysqlDB.query(sql, major,function(err, result){
+    mysqlDB.query(sql, major_chosen, function(err, majorsubject_list){
         if(error == null) {
-            console.log(major);
+            console.log(majorsubject_list);
             res.json({
                 "code" : 200,
-                "result" : result
+                "result" : majorsubject_list
             });
         }
         else{
