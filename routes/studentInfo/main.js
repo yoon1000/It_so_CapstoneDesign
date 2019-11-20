@@ -58,7 +58,7 @@ router.get('/creditnonmajor', function(req, res, next) {
 // /studentInfo/main/major
 /* 전공그래프클릭시 학기별 전공과목 가져오기 */
 router.get('/major', function(req, res, next) {
-    var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject) AND semester = ?;';
+    var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject) AND semester = ?';
     mysqlDB.query(sql, [], function(error, nonmajor) {
         if(error == null) {
             console.log(credit);

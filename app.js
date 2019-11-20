@@ -3,15 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//var bodyParser = require('body-parser');
+var swaggerUi = require('swagger-ui-express');
+var swaggerJsdoc = require('swagger-jsdoc');
+var swaggerDocument = require('./swagger.json');
+var swaggerDocument2 = require('./swaggerExample.json');
+var app = express();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var subjectRouter = require('./routes/studentInfo/subject');
 var mainRouter = require('./routes/studentInfo/main');
 
-
-var app = express();
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs/Example', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
 
 var mysqlDB = require('./config/mysql-db');
 mysqlDB.connect(function (err) {
@@ -36,7 +40,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, '/public')));
 

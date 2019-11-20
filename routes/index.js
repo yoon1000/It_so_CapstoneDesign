@@ -7,5 +7,4 @@ router.get('/', function(req, res, next) {
 });
 
 // test
-
 module.exports = router;
