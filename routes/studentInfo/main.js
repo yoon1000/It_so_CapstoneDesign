@@ -3,16 +3,16 @@ var router = express.Router();
 
 var mysqlDB = require('../../config/mysql-db');
 
-/* GET users listing. /users */
+
+/* GET users listing. /main */
 router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+    res.render('main');
 });
 
 
-
-// /studentInfo/main/creditmajor
+// /studentInfo/main/major
 /* 전공학점 가져오기 */
-router.get('/creditmajor', function(req, res, next) {
+router.get('/major', function(req, res, next) {
     var sql = 'select SUM(credit) as creditSum from Student_majorsubject;';
     mysqlDB.query(sql, [], function(error, creditSum) {
         if(error == null) {
@@ -22,7 +22,7 @@ router.get('/creditmajor', function(req, res, next) {
                 "result" : creditSum
             });
         }
-        else{ // 사용자 ID가 중복되면
+        else{
             console.log(error);
             res.json({
                 "code" : 400,
@@ -32,9 +32,9 @@ router.get('/creditmajor', function(req, res, next) {
     })
 });
 
-// /studentInfo/main/creditnonmajor
+// /studentInfo/main/nonmajor
 /* 교양과목학점 가져오기 */
-router.get('/creditnonmajor', function(req, res, next) {
+router.get('/nonmajor', function(req, res, next) {
     var sql = 'select SUM(credit) as creditSum from Student_nonmajorsubject;';
     mysqlDB.query(sql, [], function(error, creditSum) {
         if(error == null) {
@@ -55,19 +55,19 @@ router.get('/creditnonmajor', function(req, res, next) {
 
 });
 
-// /studentInfo/main/major
-/* 전공그래프클릭시 학기별 전공과목 가져오기 */
-router.get('/major', function(req, res, next) {
+// /studentInfo/main/semester
+/* 전공그래프클릭시 학기별 수강하지 않은 전공과목 가져오기 */
+router.post('/semester', function(req, res, next) {
+    var semester = parseInt(req.body.semester);
     var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject) AND semester = ?';
-    mysqlDB.query(sql, [], function(error, nonmajor) {
+    mysqlDB.query(sql, semester, function(error, result) {
         if(error == null) {
-            console.log(credit);
             res.json({
                 "code" : 200,
                 "result" : result
             });
         }
-        else{
+        else {
             console.log(error);
             res.json({
                 "code" : 400,
