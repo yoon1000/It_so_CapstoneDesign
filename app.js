@@ -15,7 +15,7 @@ var subjectRouter = require('./routes/studentInfo/subject');
 var mainRouter = require('./routes/studentInfo/main');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use('/api-docs/Example', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
+//app.use('/api-docs/Example', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
 
 var mysqlDB = require('./config/mysql-db');
 mysqlDB.connect(function (err) {
