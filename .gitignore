@@ -1,3 +1,4 @@
+#Not upload to git
 .DS_Store
 node_modules/
 /dist
