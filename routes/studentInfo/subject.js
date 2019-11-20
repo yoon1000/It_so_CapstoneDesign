@@ -46,7 +46,7 @@ router.get('/nonmajorlist', function(req, res, next) {
 
     mysqlDB.query(sql, [], function(error, nonmajor) {
         if(error == null) {
-            console.log("nonmajor success");
+            console.log(nonmajor);
             res.json({
                 "code" : 200,
                 "result" : nonmajor
@@ -73,12 +73,12 @@ router.get('/majorlist/:major_chosen', function(req, res, next) {
     //res.send(major_chosen);
 
     var sql = 'select subject_name from majorsubject where major = ?'
-    mysqlDB.query(sql, major_chosen, function(err, subject_name){
+    mysqlDB.query(sql, major_chosen, function(err, majorsubject_list){
         if(error == null) {
-            console.log(subject_name);
+            console.log(majorsubject_list);
             res.json({
                 "code" : 200,
-                "result" : subject_name
+                "result" : majorsubject_list
             });
         }
         else{
