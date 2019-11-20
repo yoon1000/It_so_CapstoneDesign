@@ -9,11 +9,10 @@ var mysqlDB = require('../../config/mysql-db');
 
 // /subject
 
-/* GET studentInfo listing. /subject
+// GET studentInfo listing./subject
 router.get('/', function(req, res, next) {
-    res.render(subject.ejs);
-  });
-*/
+    res.render('subject');
+});
 
 // /studentInfo/subject/majorlist
 /* 전공 클릭시 학과 리스트 가져오기 */
