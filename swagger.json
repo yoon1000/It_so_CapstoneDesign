@@ -18,17 +18,15 @@
   "tags": [
     {
       "name": "users",
-      "description": "Everything about your Users",
-      "externalDocs": {
-        "description": "Find out more about our users"
-      }
+      "description": "Everything about your Users"
+    },
+    {
+      "name": "main",
+      "description": "Everything about your Main"
     },
     {
       "name": "subject",
-      "description": "about subject",
-      "externalDocs": {
-        "description": "Find out more about our subject"
-      }
+      "description": "about subject"
     }
   ],
   "schemes": [
@@ -38,81 +36,348 @@
     "/users/login": {
       "post": {
         "tags": [
-          "Users"
+          "users"
         ],
-        "summary": "Finds Pets by status",
-        "description": "Multiple status values can be provided with comma separated strings",
-        "operationId": "findPetsByStatus",
-        "produces": [
-          "application/xml",
-          "application/json"
-        ],
+        "summary": "Login user into the system",
+        "description": "",
+        "operationId": "loginUser",
         "parameters": [
           {
-            "name": "status",
+            "name": "id",
             "in": "query",
-            "description": "Status values that need to be considered for filter",
+            "description": "The userID for login",
             "required": true,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "available",
-                "pending",
-                "sold"
-              ],
-              "default": "available"
-            },
-            "collectionFormat": "multi"
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "The userPW for login",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "success",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Pet"
-              }
+              "type": "string"
             }
           },
           "400": {
-            "description": "Invalid status value"
+            "description": "ERROR: Invalid username/password supplied"
           }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
+        }
       }
     },
     "/user/register": {
       "post": {
         "tags": [
-          "Users"
+          "users"
         ],
-        "summary": "Finds Pets by tags",
-        "description": "Muliple tags can be provided with comma separated strings. Use         tag1, tag2, tag3 for testing.",
-        "operationId": "findPetsByTags",
+        "summary": "Register user into the system",
+        "description": "",
+        "operationId": "RegisterUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "The user id for Register",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "The user password for Register",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "The user name for Register",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "school",
+            "in": "query",
+            "description": "The user school for Register",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "num",
+            "in": "query",
+            "description": "The user num for Register",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "major",
+            "in": "query",
+            "description": "The user major for Register",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {
+              "X-Rate-Limit": {
+                "type": "integer",
+                "format": "int32",
+                "description": "calls per hour allowed by the user"
+              },
+              "X-Expires-After": {
+                "type": "string",
+                "format": "date-time",
+                "description": "date in UTC when token expires"
+              }
+            }
+          },
+          "400": {
+            "description": "ERROR: register"
+          }
+        }
+      }
+    },
+    "/studentInfo": {
+      "post": {
+        "tags": [
+          "studentInfo Page"
+        ],
+        "summary": "studentInfo",
+        "description": "studentInfo Page",
+        "operationId": "studentInfo",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "ERROR: studentInfo"
+          }
+        }
+      }
+    },
+    "/studentInfo/main": {
+      "post": {
+        "tags": [
+          "mainPage"
+        ],
+        "summary": "main",
+        "description": "main Page",
+        "operationId": "main",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "ERROR: main"
+          }
+        }
+      }
+    },
+    "/studentInfo/main/majorCredit": {
+      "get": {
+        "tags": [
+          "main"
+        ],
+        "summary": "Get majorCredit",
+        "description": "Get majorCredit",
+        "operationId": "majorCredit",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description": "ERROR: majorCredit"
+          }
+        }
+      }
+    },
+    "/studentInfo/main/nonmajorCredit": {
+      "get": {
+        "tags": [
+          "main"
+        ],
+        "summary": "Get nonmajorCredit",
+        "description": "Get nonmajorCredit",
+        "operationId": "nonmajorCredit",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description": "ERROR: nonmajorCredit"
+          }
+        }
+      }
+    },
+    "/studentInfo/main/majorCredit/semester": {
+      "post": {
+        "tags": [
+          "main"
+        ],
+        "summary": "majorSubject group by semester",
+        "description": "majorSubject_name group by semester",
+        "operationId": "majorSemester",
         "produces": [
           "application/xml",
           "application/json"
         ],
         "parameters": [
           {
-            "name": "tags",
+            "name": "semester",
             "in": "query",
-            "description": "Tags to filter by",
+            "description": "semester",
             "required": true,
-            "type": "array",
-            "items": {
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/subjec_name/semester"
+              }
+            }
+          },
+          "400": {
+            "description": "ERROR: semester"
+          }
+        }
+      }
+    },
+    "/studentInfo/subject": {
+      "post": {
+        "tags": [
+          "subject"
+        ],
+        "summary": "subjectPage",
+        "description": "Add subject for user",
+        "operationId": "subjectPage",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
               "type": "string"
-            },
-            "collectionFormat": "multi"
+            }
+          },
+          "400": {
+            "description": "ERROR: subject"
+          }
+        }
+      }
+    },
+    "/studentInfo/subject/majorlist": {
+      "post": {
+        "tags": [
+          "subject"
+        ],
+        "summary": "Get majorlist",
+        "description": "major name list",
+        "operationId": "majorlist",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pet"
+              }
+            }
+          },
+          "400": {
+            "description": "ERROR: majorlist"
+          }
+        }
+      }
+    },
+    "/studentInfo/subject/nonmajorlist": {
+      "get": {
+        "tags": [
+          "subject"
+        ],
+        "summary": "Get nonmajorlist",
+        "description": "nonmajor subject name",
+        "operationId": "nonmajorlist",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pet"
+              }
+            }
+          },
+          "400": {
+            "description": "ERROR: nonmajorlist"
+          }
+        }
+      }
+    },
+    "/studentInfo/subject/majorlist/major": {
+      "post": {
+        "tags": [
+          "subject"
+        ],
+        "summary": "Get major_subject_name_list",
+        "description": "major subject name group by major",
+        "operationId": "majorSubjectName",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "major",
+            "in": "query",
+            "description": "major",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -126,18 +391,12 @@
             }
           },
           "400": {
-            "description": "Invalid tag value"
+            "description": "ERROR: major_subject_list"
           }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
+        }
       }
+
+
     }
   }
 }

@@ -6,8 +6,16 @@
 </head>
 <body>
 <h1>메인페이지</h1>
+<h2>전공학점</h2>
+<form action="/studentInfo/main/majorCredit" method="post">
+    <input type="submit" value="전공학점가져오기">
+</form>
+<h2>교양학점</h2>
+<form action="/studentInfo/main/nonmajorCredit" method="post">
+     <input type="submit" value="교양학점가져오기">
+</form>
 <h2>학기별 전공과목</h2>
-<form action="/studentInfo/main/semester" method="post">
+<form action="/studentInfo/main/majorCredit/semester" method="post">
     <input type="text" name="semester" placeholder="Enter your semester">
     <input type="submit" value="학기선택">
 </form>

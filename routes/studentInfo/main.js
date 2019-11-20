@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 // /studentInfo/main/major
 /* 전공학점 가져오기 */
-router.get('/major', function(req, res, next) {
+router.get('/majorCredit', function(req, res, next) {
     var sql = 'select SUM(credit) as creditSum from Student_majorsubject;';
     mysqlDB.query(sql, [], function(error, creditSum) {
         if(error == null) {
@@ -34,7 +34,7 @@ router.get('/major', function(req, res, next) {
 
 // /studentInfo/main/nonmajor
 /* 교양과목학점 가져오기 */
-router.get('/nonmajor', function(req, res, next) {
+router.get('/nonmajorCredit', function(req, res, next) {
     var sql = 'select SUM(credit) as creditSum from Student_nonmajorsubject;';
     mysqlDB.query(sql, [], function(error, creditSum) {
         if(error == null) {
@@ -57,7 +57,7 @@ router.get('/nonmajor', function(req, res, next) {
 
 // /studentInfo/main/semester
 /* 전공그래프클릭시 학기별 수강하지 않은 전공과목 가져오기 */
-router.post('/semester', function(req, res, next) {
+router.post('/majorCredit/semester', function(req, res, next) {
     var semester = parseInt(req.body.semester);
     var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject) AND semester = ?';
     mysqlDB.query(sql, semester, function(error, result) {
