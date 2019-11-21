@@ -304,7 +304,7 @@
       }
     },
     "/studentInfo/subject/majorlist": {
-      "post": {
+      "get": {
         "tags": [
           "subject"
         ],
