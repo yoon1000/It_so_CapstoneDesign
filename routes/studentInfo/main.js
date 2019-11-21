@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-// /studentInfo/main/major
+// /studentInfo/main/majorCredit
 /* 전공학점 가져오기 */
 router.get('/majorCredit', function(req, res, next) {
     var sql = 'select SUM(credit) as creditSum from Student_majorsubject;';

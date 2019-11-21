@@ -33,7 +33,7 @@
     "http"
   ],
   "paths": {
-    "/users/login": {
+    "/users": {
       "post": {
         "tags": [
           "users"
@@ -70,7 +70,7 @@
         }
       }
     },
-    "/user/register": {
+    "/users/register": {
       "post": {
         "tags": [
           "users"
