@@ -4,9 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var swaggerUi = require('swagger-ui-express');
-var swaggerJsdoc = require('swagger-jsdoc');
 var swaggerDocument = require('./swagger.json');
-var swaggerDocument2 = require('./swaggerExample.json');
 var app = express();
 
 var indexRouter = require('./routes/index');
@@ -15,7 +13,6 @@ var subjectRouter = require('./routes/studentInfo/subject');
 var mainRouter = require('./routes/studentInfo/main');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-//app.use('/api-docs/Example', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
 
 var mysqlDB = require('./config/mysql-db');
 mysqlDB.connect(function (err) {
