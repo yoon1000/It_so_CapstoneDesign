@@ -19,7 +19,7 @@ router.get('/majorCredit', function(req, res, next) {
             console.log(creditSum);
             res.json({
                 "code" : 200,
-                "creditSum" : creditSum
+                 creditSum
             });
         }
         else{
