@@ -17,7 +17,10 @@ router.get('/majorCredit', function(req, res, next) {
     mysqlDB.query(sql, [], function(error, creditSum) {
         if(error == null) {
             console.log(creditSum);
-            res.json(creditSum);
+            res.json({
+                "code" : 200,
+                "result" : creditSum
+            });
         }
         else{
             console.log(error);
