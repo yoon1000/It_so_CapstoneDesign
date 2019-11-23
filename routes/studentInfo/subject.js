@@ -14,6 +14,26 @@ router.get('/', function(req, res, next) {
     res.render('subject');
 });
 
+//POST /studentInfo/subject/time
+router.post('/time', function(req, res, next) {
+    var sql = 'select time from Open_major_ where subject_name=?;';
+    mysqlDB.query(sql, [req.body.subject_name], function(error, result) {
+        if(error == null) {
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else {
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    });
+});
+
 // /studentInfo/subject/majorlist
 /* 전공 클릭시 학과 리스트 가져오기 */
 router.get('/majorlist', function(req, res, next) {
