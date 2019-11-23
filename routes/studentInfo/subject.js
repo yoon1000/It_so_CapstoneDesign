@@ -118,7 +118,7 @@ router.post('/majorlist', function (req, res){
     //console.log(subject_list);
 
     var sql = 'insert into Student_majorsubject ' +
-        'select distinct m.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
+        'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
         'from Student as s '+
         'join majorsubject as m ' +
         'on s.major = m.major ' +
@@ -177,10 +177,10 @@ router.post('/nonmajorlist', function (req, res){
     var split;
     for (var i = 0; i < length; i++) {
         split = nonmajor_list_toString.split(',');
-        console.log(split[i]);
+        //console.log(split[i]);
     }
 
-    var sql = 'insert into Student_nonmajorsubject'+' select distinct n.id, s.school, n.subject_name, s.num, n.credit'
+    var sql = 'insert into Student_nonmajorsubject'+' select distinct s.id, s.school, n.subject_name, s.num, n.credit'
     +' from Student as s'
     +' join nonmajorsubject as n'
     +' on s.school = n.school'
