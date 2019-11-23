@@ -34,6 +34,7 @@ router.post('/register', function(req, res, next) {
 /* 로그인  /users/login */
 router.post('/login', function(req, res, next) {
   var sql = 'select * from Student where id = ?';
+
   mysqlDB.query(sql, [req.body.id], function(error, result) {
     if(error == null) {
       if(result.length > 0) {
@@ -43,6 +44,7 @@ router.post('/login', function(req, res, next) {
             "code" : 200,
             "result" : result
           });
+          console.log(req.body);
         }
         else {
           console.log('Password does not match');

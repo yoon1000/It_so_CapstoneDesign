@@ -4,7 +4,8 @@ var connection = mysql.createConnection({
     user: 'root',
     password: 'Test!@#123',
     port: 18081,
-    database: 'muse'
+    database: 'muse',
+    multipleStatements: true
 });
 
 connection.connect();

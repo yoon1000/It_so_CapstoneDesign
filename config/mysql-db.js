@@ -5,7 +5,8 @@ var connection = mysql.createConnection({
     port : 18081,
     user : 'root',
     password : 'Test!@#123',
-    database : 'muse'
+    database : 'muse',
+    multipleStatements: true
 })
 
 module.exports = connection;
