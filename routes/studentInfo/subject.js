@@ -84,8 +84,8 @@ router.get('/nonmajorlist', function(req, res, next) {
 
 // /studentInfo/subject/majorlist/major
 /* 학과 클릭시 해당학과의 전공과목 리스트 가져오기 */
-router.post('/majorlist/major', function(req, res, next) {
-    var sql = 'select subject_name from majorsubject where major = ?';
+router.get('/majorlist/major', function(req, res, next) {
+    var sql = 'select subject_name from majorsubject where major = "소프트웨어학과"';
     mysqlDB.query(sql, [req.body.major], function(error, result) {
         if(error == null) {
             res.json({
