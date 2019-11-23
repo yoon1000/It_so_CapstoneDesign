@@ -6,12 +6,20 @@
 </head>
 <body>
 <h1>메인페이지</h1>
+<h2>과별 요구전공학점</h2>
+<form action="/studentInfo/main/required_majorCredit" method="get">
+    <input type="submit" value="요구전공학점불러오기">
+</form>
+<h2>과별 요구교양학점</h2>
+<form action="/studentInfo/main/required_nonmajorCredit" method="get">
+    <input type="submit" value="요구교양학점불러오기">
+</form>
 <h2>전공학점</h2>
-<form action="/studentInfo/main/majorCredit" method="gett">
+<form action="/studentInfo/main/majorCredit" method="get">
     <input type="submit" value="전공학점가져오기">
 </form>
 <h2>교양학점</h2>
-<form action="/studentInfo/main/nonmajorCredit" method="gett">
+<form action="/studentInfo/main/nonmajorCredit" method="get">
      <input type="submit" value="교양학점가져오기">
 </form>
 <h2>학기별 전공과목</h2>

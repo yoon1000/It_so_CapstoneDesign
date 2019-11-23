@@ -9,6 +9,46 @@ router.get('/', function(req, res, next) {
     res.render('main');
 });
 
+router.get('/required_majorCredit', function(req, res, next) {
+    var sql = 'select distinct required_credit_major from Graduation_requirement where major = "소프트웨어학과";';
+    mysqlDB.query(sql, [],function(error, result) {
+        if(error == null) {
+            console.log(result);
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else{
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    })
+});
+
+router.get('/required_nonmajorCredit', function(req, res, next) {
+    var sql = 'select distinct required_credit_non_major from Graduation_requirement where major="소프트웨어학과";';
+    mysqlDB.query(sql, [],function(error, result) {
+        if(error == null) {
+            console.log(result);
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else{
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    })
+});
+
 // /studentInfo/main/majorCredit
 /* 전공학점 가져오기 */
 router.get('/majorCredit', function(req, res, next) {
