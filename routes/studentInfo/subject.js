@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 // /studentInfo/subject/majorlist
 /* 전공 클릭시 학과 리스트 가져오기 */
 router.get('/majorlist', function(req, res, next) {
-    var sql = 'select major from Graduation_requirement;';
+    var sql = 'select distinct major from Graduation_requirement;';
 
     mysqlDB.query(sql, [], function(error, major) {
         if(error == null) {
