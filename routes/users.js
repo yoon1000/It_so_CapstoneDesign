@@ -20,6 +20,7 @@ router.post('/register', function(req, res, next) {
         "code" : 200,
         "result" : "success"
       });
+
     }
     else{ // 사용자 ID가 중복되면
       console.log(error);
