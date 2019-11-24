@@ -130,7 +130,7 @@ router.post('/majorlist', function (req, res){
     }*/
     var string = req.body.subject.replaceAll('\"', '');
     var string2 = string.replace('[','');
-    var string3 = string.replace(']','');
+    var string3 = string2.replace(']','');
     console.log(string3);
     var split = new Array();
 
