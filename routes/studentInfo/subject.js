@@ -107,9 +107,9 @@ router.get('/majorlist/major', function(req, res, next) {
 클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
 router.post('/majorlist', function (req, res){
      var id = req.body.id;
-    var subject_list = req.body.subject;//학생이 들은 과목들
-    var length = Object.keys(subject_list).length;//과목의 개수
-    var subject_list_toString = subject_list.toString();
+    // var subject_list = req.body.subject;//학생이 들은 과목들
+    // var length = Object.keys(subject_list).length;//과목의 개수
+    // var subject_list_toString = subject_list.toString();
     // var query ="";
     // console.log(id);
     //console.log(sql);
@@ -124,10 +124,10 @@ router.post('/majorlist', function (req, res){
     //     'on s.major = m.major ' +
     //     'where s.id = ?';
 
-    for (var i = 0; i < length; i++) {
+    /*for (var i = 0; i < length; i++) {
         split = subject_list_toString.split(',');
         //console.log(split[i]);
-    }
+    }*/
     var string = req.body.subject.replace('\"', '');
     var split = new Array();
 
