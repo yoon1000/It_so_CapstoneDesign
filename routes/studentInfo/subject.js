@@ -129,6 +129,7 @@ router.post('/majorlist', function (req, res){
         //console.log(split[i]);
     }*/
     console.log(req.body.subject);
+    console.log(req.body.subject.toString());
     var string = req.body.subject.replace('\"', '');
     console.log(string);
     var string2 = string.replace('\\[','');
