@@ -107,8 +107,8 @@ router.get('/majorlist/major', function(req, res, next) {
 클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
 router.post('/majorlist', function (req, res){
     var id = req.body.id;
-    var subject_list = req.body.subject;//학생이 들은 과목들
-     var length = Object.keys(subject_list).length;//과목의 개수
+    // var subject_list = req.body.subject;//학생이 들은 과목들
+    // var length = Object.keys(subject_list).length;//과목의 개수
     // var subject_list_toString = subject_list.toString();
     // var query ="";
     // console.log(id);
@@ -117,12 +117,12 @@ router.post('/majorlist', function (req, res){
     //console.log(subject_list.toString());
     //console.log(subject_list);
 
-    var sql = 'insert into Student_majorsubject ' +
-        'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
-        'from Student as s '+
-        'join majorsubject as m ' +
-        'on s.major = m.major ' +
-        'where s.id = ';
+    // var sql = 'insert into Student_majorsubject ' +
+    //     'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
+    //     'from Student as s '+
+    //     'join majorsubject as m ' +
+    //     'on s.major = m.major ' +
+    //     'where s.id = ?';
 
     /*for (var i = 0; i < length; i++) {
         split = subject_list_toString.split(',');
@@ -158,12 +158,18 @@ router.post('/majorlist', function (req, res){
                 console.log(split[i]+"insert 성공");
             });
         }//비동기 관련 문제 있는 for문*/
-    for(var i=0; i<length;i++){
-        sql += sql +  '\'' + id + '\'' +  ' AND m.subject_name= ' + '\''+split[i] + '\''+';'
-    }
+    // for(var i=0; i<length;i++){
+    //     query += sql +  '\'' + id + '\'' +  ' AND m.subject_name= ' + '\''+split[i] + '\''+';'
+    // }
+    var sql = 'insert into Student_majorsubject' +
+        ' select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester' +
+        ' from Student as s' +
+        ' join majorsubject as m' +
+        ' on s.major = m.major' +
+        ' where s.id = ? AND (m.subject_name = ?'+' OR m.subject_name =? '+ ' OR m.subject_name = ? )'+';';
 
 
-    mysqlDB.query(sql, [], function(error, result) {
+    mysqlDB.query(sql, [id,split[0], split[1], split[2]], function(error, result) {
         if(error == null) {
             res.json({
                 "code" : 200,
