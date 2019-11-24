@@ -169,7 +169,7 @@ router.post('/majorlist', function (req, res){
         ' where s.id = ? AND (m.subject_name = ?'+' OR m.subject_name =? '+ ' OR m.subject_name = ? )'+';';
 
 
-    mysqlDB.query(sql, [id,req.body.subject[0],req.body.subject[1],req.body.subject[2]], function(error, result) {
+    mysqlDB.query(sql, [id,split[0], split[1], split[2]], function(error, result) {
         if(error == null) {
             res.json({
                 "code" : 200,
