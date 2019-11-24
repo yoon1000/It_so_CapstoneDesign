@@ -108,9 +108,9 @@ router.get('/majorlist/major', function(req, res, next) {
 router.post('/majorlist', function (req, res){
      var id = req.body.id;
     //var subject_list = req.body.subject;//학생이 들은 과목들
-    var length = Object.keys(subject_list).length;//과목의 개수
-    var subject_list_toString = subject_list.toString();
-    var query ="";
+    // var length = Object.keys(subject_list).length;//과목의 개수
+    // var subject_list_toString = subject_list.toString();
+    // var query ="";
     // console.log(id);
     //console.log(sql);
     //String subject_toString;
@@ -152,7 +152,9 @@ router.post('/majorlist', function (req, res){
         ' join majorsubject as m' +
         ' on s.major = m.major' +
         ' where s.id = ? AND (m.subject_name = ?'+' OR m.subject_name =? '+ ' OR m.subject_name = ? )'+';';
-
+console.log(req.body.subject[0]);
+    console.log(req.body.subject[1]);
+    console.log(req.body.subject[2]);
     mysqlDB.query(sql, [id,req.body.subject[0],req.body.subject[1],req.body.subject[2]], function(error, result) {
         if(error == null) {
             res.json({
