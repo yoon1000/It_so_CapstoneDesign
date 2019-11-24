@@ -106,7 +106,7 @@ router.get('/majorlist/major', function(req, res, next) {
 /*/studentInfo/subject/majorlist
 클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
 router.post('/majorlist', function (req, res){
-     var id = req.body.id;
+    var id = req.body.id;
     // var subject_list = req.body.subject;//학생이 들은 과목들
     // var length = Object.keys(subject_list).length;//과목의 개수
     // var subject_list_toString = subject_list.toString();
@@ -117,12 +117,12 @@ router.post('/majorlist', function (req, res){
     //console.log(subject_list.toString());
     //console.log(subject_list);
 
-    // var sql = 'insert into Student_majorsubject ' +
-    //     'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
-    //     'from Student as s '+
-    //     'join majorsubject as m ' +
-    //     'on s.major = m.major ' +
-    //     'where s.id = ?';
+    var sql = 'insert into Student_majorsubject ' +
+        'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
+        'from Student as s '+
+        'join majorsubject as m ' +
+        'on s.major = m.major ' +
+        'where s.id = ';
 
     /*for (var i = 0; i < length; i++) {
         split = subject_list_toString.split(',');
@@ -144,36 +144,30 @@ router.post('/majorlist', function (req, res){
     console.log(split[2]);
 
     //console.log(sql + '\''+ id + '\'' +  ' AND m.subject_name= ' +  '\''+ split[0] +'\''+ ';');
-/*    for (var i = 0; i < length; i++) { // Object.keys(obj).length 로 반복문을 돌려서 value에 접근해도?
-        var split = subject_list_toString.split(',');
-        console.log(split[i]);
-        var sql = 'insert into Student_majorsubject ' +
-        'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
-        'from Student as s '+
-        'join majorsubject as m ' +
-        'on s.major = m.major ' +
-        'where s.id = ? AND m.subject_name= ?';
+    /*    for (var i = 0; i < length; i++) { // Object.keys(obj).length 로 반복문을 돌려서 value에 접근해도?
+            var split = subject_list_toString.split(',');
+            console.log(split[i]);
+            var sql = 'insert into Student_majorsubject ' +
+            'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
+            'from Student as s '+
+            'join majorsubject as m ' +
+            'on s.major = m.major ' +
+            'where s.id = ? AND m.subject_name= ?';
 
-        mysqlDB.query(sql, [id, split[i]], function (err, result) {// 아이디를 가지고 school, num, major를 받아온다
-            console.log(split[i]+"insert 성공");
-        });
-    }//비동기 관련 문제 있는 for문*/
-    // for(var i=0; i<length;i++){
-    //     query += sql +  '\'' + id + '\'' +  ' AND m.subject_name= ' + '\''+split[i] + '\''+';'
-    // }
-    var sql = 'insert into Student_majorsubject' +
-        ' select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester' +
-        ' from Student as s' +
-        ' join majorsubject as m' +
-        ' on s.major = m.major' +
-        ' where s.id = ? AND (m.subject_name = ?'+' OR m.subject_name =? '+ ' OR m.subject_name = ? )'+';';
+            mysqlDB.query(sql, [id, split[i]], function (err, result) {// 아이디를 가지고 school, num, major를 받아온다
+                console.log(split[i]+"insert 성공");
+            });
+        }//비동기 관련 문제 있는 for문*/
+    for(var i=0; i<length;i++){
+        sql += sql +  '\'' + id + '\'' +  ' AND m.subject_name= ' + '\''+split[i] + '\''+';'
+    }
 
 
-    mysqlDB.query(sql, [id,split[0], split[1], split[2]], function(error, result) {
+    mysqlDB.query(sql, [], function(error, result) {
         if(error == null) {
             res.json({
                 "code" : 200,
-                "result" : result
+                "result" : "success"
             });
         }
         else {
@@ -203,10 +197,10 @@ router.post('/nonmajorlist', function (req, res){
     }
 
     var sql = 'insert into Student_nonmajorsubject'+' select distinct s.id, s.school, n.subject_name, s.num, n.credit'
-    +' from Student as s'
-    +' join nonmajorsubject as n'
-    +' on s.school = n.school'
-    +' where s.id = ?'+ ' AND (n.subject_name= ?'+' OR n.subject_name =?'+' OR n.subject_name =?)' +';';
+        +' from Student as s'
+        +' join nonmajorsubject as n'
+        +' on s.school = n.school'
+        +' where s.id = ?'+ ' AND (n.subject_name= ?'+' OR n.subject_name =?'+' OR n.subject_name =?)' +';';
 
     /*for(var i=0; i<length;i++){
         query += sql +  '\'' + id + '\'' +  ' AND n.subject_name= ' + '\''+split[i] + '\''+';'
