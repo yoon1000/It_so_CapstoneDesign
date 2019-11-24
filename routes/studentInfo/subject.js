@@ -130,7 +130,7 @@ router.post('/majorlist', function (req, res){
     }*/
     console.log(req.body.subject);
     console.log(req.body.subject.toString());
-    var string = req.body.subject.replace('\"', '');
+    var string = req.body.subject.replace(/\"/g,'');
     console.log(string);
     var string2 = string.replace('\\[','');
     console.log(string2);
