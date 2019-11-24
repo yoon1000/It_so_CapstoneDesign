@@ -51,9 +51,9 @@ router.get('/required_nonmajorCredit', function(req, res, next) {
 
 // /studentInfo/main/majorCredit
 /* 전공학점 가져오기 */
-router.get('/majorCredit', function(req, res, next) {
-    var sql = 'select SUM(credit) as creditSum from Student_majorsubject;';
-    mysqlDB.query(sql, [],function(error, creditSum) {
+router.post('/majorCredit', function(req, res, next) {
+    var sql = 'select SUM(credit) as creditSum from Student_majorsubject where id=?;';
+    mysqlDB.query(sql, [req.body.id],function(error, creditSum) {
         if(error == null) {
             console.log(creditSum);
             res.json({
@@ -73,9 +73,9 @@ router.get('/majorCredit', function(req, res, next) {
 
 // /studentInfo/main/nonmajor
 /* 교양과목학점 가져오기 */
-router.get('/nonmajorCredit', function(req, res, next) {
-    var sql = 'select SUM(credit) as creditSum from Student_nonmajorsubject;';
-    mysqlDB.query(sql, [], function(error, creditSum) {
+router.post('/nonmajorCredit', function(req, res, next) {
+    var sql = 'select SUM(credit) as creditSum from Student_nonmajorsubject where id=?;';
+    mysqlDB.query(sql, [req.body.id], function(error, creditSum) {
         if(error == null) {
             console.log(creditSum);
             res.json({
