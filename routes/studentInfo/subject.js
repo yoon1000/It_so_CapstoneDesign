@@ -128,8 +128,11 @@ router.post('/majorlist', function (req, res){
         split = subject_list_toString.split(',');
         //console.log(split[i]);
     }*/
+    console.log(req.body.subject);
     var string = req.body.subject.replaceAll('\"', '');
+    console.log(string);
     var string2 = string.replace('\\[','');
+    console.log(string2);
     var string3 = string2.replace('\\]','');
     console.log(string3);
     var split = new Array();
