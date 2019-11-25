@@ -188,8 +188,8 @@ router.post('/majorlist', function (req, res){
 });
 
 
-/*/studentInfo/subject/nonmajorlist
-클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
+/*/!*!/studentInfo/subject/nonmajorlist
+클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*!/
 router.post('/nonmajorlist', function (req, res){
     var id = req.body.id;
     var nonmajor_list = req.body.subject;//학생이 들은 과목들
@@ -208,9 +208,9 @@ router.post('/nonmajorlist', function (req, res){
         +' on s.school = n.school'
         +' where s.id = ?'+ ' AND (n.subject_name= ?'+' OR n.subject_name =?'+' OR n.subject_name =?)' +';';
 
-    /*for(var i=0; i<length;i++){
+    /!*for(var i=0; i<length;i++){
         query += sql +  '\'' + id + '\'' +  ' AND n.subject_name= ' + '\''+split[i] + '\''+';'
-        *///console.log(query);
+        *!///console.log(query);
 
 
     mysqlDB.query(sql, [id, req.body.subject[0],req.body.subject[1],req.body.subject[2] ], function(error, result) {
@@ -229,11 +229,63 @@ router.post('/nonmajorlist', function (req, res){
         }
     });
 
+});*/
+
+/*/studentInfo/subject/nonmajorlist
+클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
+router.post('/nonmajorlist', function (req, res){
+    var id = req.body.id;
+    /*var nonmajor_list = req.body.subject;//학생이 들은 과목들
+    var length = Object.keys(nonmajor_list).length;//과목의 개수
+    var query = "";
+    var nonmajor_list_toString = nonmajor_list.toString();
+    var split;
+    for (var i = 0; i < length; i++) {
+        split = nonmajor_list_toString.split(',');
+        //console.log(split[i]);
+    }*/
+    console.log(req.body.subject);
+    console.log(req.body.subject.toString());
+    var string = req.body.subject.replace(/\"/g,'');
+    console.log(string);
+    var string2 = string.replace(/\[/g,'');
+    console.log(string2);
+    var string3 = string2.replace(/\]/g,'');
+    console.log(string3);
+    var split = new Array();
+
+    split = string3.split(',');
+    console.log(split[0]);
+    console.log(split[1]);
+    console.log(split[2]);
+
+    var sql = 'insert into Student_nonmajorsubject'+' select distinct s.id, s.school, n.subject_name, s.num, n.credit'
+        +' from Student as s'
+        +' join nonmajorsubject as n'
+        +' on s.school = n.school'
+        +' where s.id = ?'+ ' AND (n.subject_name= ?'+' OR n.subject_name =?'+' OR n.subject_name =?)' +';';
+
+    /*for(var i=0; i<length;i++){
+        query += sql +  '\'' + id + '\'' +  ' AND n.subject_name= ' + '\''+split[i] + '\''+';'
+        *///console.log(query);
 
 
-
+    mysqlDB.query(sql, [id, split[0], split[1], split[2] ], function(error, result) {
+        if(error == null) {
+            res.json({
+                "code" : 200,
+                "result" : "success"
+            });
+        }
+        else {
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    });
 
 });
-
 
 module.exports = router;
