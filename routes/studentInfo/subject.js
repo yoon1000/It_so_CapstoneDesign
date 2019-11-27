@@ -212,11 +212,28 @@ router.post('/nonmajorlist', function (req, res){
             });
         }
     });
+});
 
-
-
-
-
+// /studentInfo/subject/Completed_majorsubject
+/* 학생이 들은 전공과목 불러오기 */
+router.post('/Completed_majorsubject', function(req, res, next) {
+    var sql = 'select subject_name from Student_majorsubject where id=?;';
+    mysqlDB.query(sql, [req.body.id],function(error, result) {
+        if(error == null) {
+            console.log(result);
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else{
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    })
 });
 
 
