@@ -117,15 +117,17 @@ router.post('/majorCredit/semester', function(req, res, next) {
 });
 
 /*졸업요건 중 비교과 졸업요건 가져오기
-* 어느 학과인지 어느 학교인지 해당 유저의 졸업년도 알아야 함--- 임시로 아주대, 소프트웨어학과로 가정*/
-router.get('/required_nonSubject', function(req, res, next) {
-    var sql = 'select language_grade from Graduation_requirement where major = "소프트웨어학과" and admission_num = 2018;';
-    mysqlDB.query(sql, [],function(error, result) {
+* 어느 학과인지 어느 학교인지 해당 유저의 졸업년도 알아야 함*/
+router.post('/required_nonSubject', function(req, res, next) {
+    var year = req.body.num.substring(0,4);
+    console.log(year);
+    var sql = 'select language_grade from Graduation_requirement where major = ? AND admission_num = ?';
+    mysqlDB.query(sql, [req.body.major, year],function(error, language_grade) {
         if(error == null) {
-            console.log(result);
+            console.log(language_grade);
             res.json({
                 "code" : 200,
-                "result" : result
+                "result" : language_grade
             });
         }
         else{
