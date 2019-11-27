@@ -3,9 +3,6 @@ var router = express.Router();
 
 var mysqlDB = require('../../config/mysql-db');
 
-//router.set('view engine', 'ejs');
-//router.set('views', __dirname +'/views');
-
 
 // /subject
 
@@ -111,41 +108,7 @@ router.post('/majorlist', function (req, res){
     var length = Object.keys(subject_list).length;//과목의 개수
     var subject_list_toString = subject_list.toString();
     var query ="";
-    // console.log(id);
-    //console.log(sql);
-    //String subject_toString;
-    //console.log(subject_list.toString());
-    //console.log(subject_list);
-
-    // var sql = 'insert into Student_majorsubject ' +
-    //     'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
-    //     'from Student as s '+
-    //     'join majorsubject as m ' +
-    //     'on s.major = m.major ' +
-    //     'where s.id = ?';
-
-    /*for (var i = 0; i < length; i++) {
-        split = subject_list_toString.split(',');
-        //console.log(split[i]);
-    }*/
-    //console.log(sql + '\''+ id + '\'' +  ' AND m.subject_name= ' +  '\''+ split[0] +'\''+ ';');
-/*    for (var i = 0; i < length; i++) { // Object.keys(obj).length 로 반복문을 돌려서 value에 접근해도?
-        var split = subject_list_toString.split(',');
-        console.log(split[i]);
-        var sql = 'insert into Student_majorsubject ' +
-        'select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester '+
-        'from Student as s '+
-        'join majorsubject as m ' +
-        'on s.major = m.major ' +
-        'where s.id = ? AND m.subject_name= ?';
-
-        mysqlDB.query(sql, [id, split[i]], function (err, result) {// 아이디를 가지고 school, num, major를 받아온다
-            console.log(split[i]+"insert 성공");
-        });
-    }//비동기 관련 문제 있는 for문*/
-    // for(var i=0; i<length;i++){
-    //     query += sql +  '\'' + id + '\'' +  ' AND m.subject_name= ' + '\''+split[i] + '\''+';'
-    // }
+   
     var sql = 'insert into Student_majorsubject' +
         ' select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester' +
         ' from Student as s' +
@@ -192,11 +155,7 @@ router.post('/nonmajorlist', function (req, res){
     +' on s.school = n.school'
     +' where s.id = ?'+ ' AND (n.subject_name= ?'+' OR n.subject_name =?'+' OR n.subject_name =?)' +';';
 
-    /*for(var i=0; i<length;i++){
-        query += sql +  '\'' + id + '\'' +  ' AND n.subject_name= ' + '\''+split[i] + '\''+';'
-        *///console.log(query);
-
-
+ 
     mysqlDB.query(sql, [id, req.body.subject[0],req.body.subject[1],req.body.subject[2] ], function(error, result) {
         if(error == null) {
             res.json({
