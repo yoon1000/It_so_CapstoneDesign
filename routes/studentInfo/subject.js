@@ -58,7 +58,7 @@ router.get('/majorlist', function(req, res, next) {
 // /studentInfo/subject/nonmajorlist
 /* 학적정보추가에서 교양 클릭시 듣지않은 교양과목 리스트 가져오기 */
 router.post('/nonmajorlist', function(req, res, next) {
-    var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject where id = ?)';
+    var sql = 'select subject_name from nonmajorsubject where subject_name NOT IN (select subject_name from Student_nonmajorsubject where id = ?)';
     mysqlDB.query(sql, [req.body.id], function(error, result) {
         if(error == null) {
             res.json({
