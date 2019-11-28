@@ -6,9 +6,11 @@
 </head>
 <body>
 <h1>학적정보추가페이지</h1>
-<h2>학과</h2>
-<form action="/studentInfo/subject/majorlist/major" method="get">
-    <button>GET</button>
+<h2>듣지않은전공과목</h2>
+<form action="/studentInfo/subject/majorlist/major" method="post">
+    <input type="id" name="id" placeholder="Enter your id">
+    <input type="major" name="major" placeholder="Enter your major">
+    <input type="submit" value="불러오기">
 </form>
 <h2>교양</h2>
 <form action="/studentInfo/subject/nonmajorlist" method="get">
