@@ -56,19 +56,17 @@ router.get('/majorlist', function(req, res, next) {
 });
 
 // /studentInfo/subject/nonmajorlist
-/* 교양 클릭시 교양과목 리스트 가져오기 */
-router.get('/nonmajorlist', function(req, res, next) {
-    var sql = 'select subject_name from nonmajorsubject;';
-
-    mysqlDB.query(sql, [], function(error, nonmajor) {
+/* 학적정보추가에서 교양 클릭시 듣지않은 교양과목 리스트 가져오기 */
+router.post('/nonmajorlist', function(req, res, next) {
+    var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject where id = ?)';
+    mysqlDB.query(sql, [req.body.id], function(error, result) {
         if(error == null) {
-            console.log(nonmajor);
             res.json({
                 "code" : 200,
-                "result" : nonmajor
+                "result" : result
             });
         }
-        else{
+        else {
             console.log(error);
             res.json({
                 "code" : 400,
@@ -76,11 +74,10 @@ router.get('/nonmajorlist', function(req, res, next) {
             });
         }
     });
-
 });
 
 // /studentInfo/subject/majorlist/major
-/* 전공그래프클릭시 전체 수강하지 않은 전공과목 가져오기 */
+/* 학적추가에서 전공클릭시 전체 수강하지 않은 전공과목 가져오기 */
 router.post('/majorlist/major', function(req, res, next) {
     var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject where id = ?) AND major = ?';
     mysqlDB.query(sql, [req.body.id, req.body.major], function(error, result) {
