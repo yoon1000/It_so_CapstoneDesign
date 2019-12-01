@@ -140,4 +140,31 @@ router.post('/required_nonSubject', function(req, res, next) {
 });
 
 
+/*졸업요건 중 비교과 졸업요건 가져오기
+* 어느 학과인지 어느 학교인지 해당 유저의 졸업년도 알아야 함*/
+
+router.post('/languageScore', function (req, res, next) {
+    var languageScore = req.body.language;
+    var id = req.body.id;
+    var sql = 'update Student set language_grade = ? where id = ? ';
+    mysqlDB.query(sql, [languageScore, id],function(error, result) {
+        if(error == null) {
+            console.log(result);
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else{
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    })
+
+})
+
+
 module.exports = router;
