@@ -97,8 +97,8 @@ router.post('/majorlist/major', function(req, res, next) {
     });
 });
 
-/*/studentInfo/subject/majorlist
-클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
+/*/!*!/studentInfo/subject/majorlist
+클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*!/
 router.post('/majorlist', function (req, res){
      var id = req.body.id;
     //var subject_list = req.body.subject;//학생이 들은 과목들
@@ -129,6 +129,51 @@ router.post('/majorlist', function (req, res){
         }
     });
 
+});*/
+
+router.post('/majorlist', function (req, res){
+    var id = req.body.id;
+    var subject_list = req.body.subject;//학생이 들은 과목들
+    //var length = Object.keys(req.body.length).length;//과목의 개수
+    var query ="";
+    console.log(subject_list);
+
+    var temp1 = subject_list.replace("[" ,"");
+    //console.log(aa);
+    var temp2 = temp1.replace(']',"");
+    var temp3 = temp2.replace(/"/gi, "");
+    //console.log(temp3);
+    var split = temp3.split(',');
+
+
+    var sql ='insert into Student_majorsubject' +
+        ' select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester' +
+        ' from Student as s' +
+        ' join majorsubject as m' +
+        ' on s.major = m.major' +
+        ' where s.id = ';
+
+
+    for(var i=0; i<split.length;i++) {
+        query += sql + '\'' + id + '\'' + ' AND m.subject_name = ' + '\'' + split[i] + '\'' + ';'
+    }
+    console.log(query);
+
+    mysqlDB.query(query, [], function(error, result) {
+        if(error == null) {
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else {
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    });
 });
 
 
@@ -137,23 +182,26 @@ router.post('/majorlist', function (req, res){
 router.post('/nonmajorlist', function (req, res){
     var id = req.body.id;
     var nonmajor_list = req.body.subject;//학생이 들은 과목들
-    var length = Object.keys(nonmajor_list).length;//과목의 개수
+    //var length = Object.keys(nonmajor_list).length;//과목의 개수
     var query = "";
-    var nonmajor_list_toString = nonmajor_list.toString();
-    var split;
-    for (var i = 0; i < length; i++) {
-        split = nonmajor_list_toString.split(',');
-        //console.log(split[i]);
-    }
+
+    var temp1 = nonmajor_list.replace("[" ,"");
+    var temp2 = temp1.replace(']',"");
+    var temp3 = temp2.replace(/"/gi, "");
+    var split = temp3.split(',');
+
 
     var sql = 'insert into Student_nonmajorsubject'+' select distinct s.id, s.school, n.subject_name, s.num, n.credit'
     +' from Student as s'
     +' join nonmajorsubject as n'
     +' on s.school = n.school'
-    +' where s.id = ?'+ ' AND (n.subject_name= ?'+' OR n.subject_name =?'+' OR n.subject_name =?)' +';';
+    +' where s.id = ';
 
+    for(var i=0; i<split.length;i++) {
+        query += sql + '\'' + id + '\'' + ' AND m.subject_name = ' + '\'' + split[i] + '\'' + ';'
+    }
  
-    mysqlDB.query(sql, [id, req.body.subject[0],req.body.subject[1],req.body.subject[2] ], function(error, result) {
+    mysqlDB.query(sql, [], function(error, result) {
         if(error == null) {
             res.json({
                 "code" : 200,
