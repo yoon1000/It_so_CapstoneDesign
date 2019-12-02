@@ -177,7 +177,7 @@ router.post('/majorlist', function (req, res){
 });
 
 
-/*/studentInfo/subject/nonmajorlist
+/*/studentInfo/subject/StudentNonmajorlist
 클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
 router.post('/StudentNonmajorlist', function (req, res){
     var id = req.body.id;
@@ -202,7 +202,7 @@ router.post('/StudentNonmajorlist', function (req, res){
         query += sql + '\'' + id + '\'' + ' AND n.subject_name = ' + '\'' + split[i] + '\'' + ';'
     }
     console.log(query);
-    mysqlDB.query(sql, [], function(error, result) {
+    mysqlDB.query(query, [], function(error, result) {
         if(error == null) {
             res.json({
                 "code" : 200,
