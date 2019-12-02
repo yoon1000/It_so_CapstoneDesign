@@ -181,7 +181,7 @@ router.post('/majorlist', function (req, res){
 클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*/
 router.post('/nonmajorlist', function (req, res){
     var id = req.body.id;
-    var nonmajor_list = req.body.subject;//학생이 들은 과목들
+    var nonmajor_list = req.body.subject2;//학생이 들은 과목들
     //var length = Object.keys(nonmajor_list).length;//과목의 개수
     var query = "";
 
