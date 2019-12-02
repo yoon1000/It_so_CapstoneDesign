@@ -147,7 +147,30 @@ router.post('/languageScore', function (req, res, next) {
     var languageScore = req.body.language;
     var id = req.body.id;
     var sql = 'update Student set language_grade = ? where id = ? ';
-    mysqlDB.query(sql, [languageScore, id],function(error, result) {
+    mysqlDB.query(sql, [languageScore, id],function(error, languageScore) {
+        if(error == null) {
+            console.log(languageScore);
+            res.json({
+                "code" : 200,
+                "result" : languageScore
+            });
+        }
+        else{
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    })
+
+})
+
+
+router.post('/mainLanguageScore', function (req, res, next) {
+    var id = req.body.id;
+    var sql = 'select language_grade from Student where id = ?';
+    mysqlDB.query(sql, id, function (error, result) {
         if(error == null) {
             console.log(result);
             res.json({
@@ -163,8 +186,9 @@ router.post('/languageScore', function (req, res, next) {
             });
         }
     })
-
 })
+
+
 
 
 module.exports = router;
