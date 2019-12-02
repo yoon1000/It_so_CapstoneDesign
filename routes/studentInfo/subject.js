@@ -198,7 +198,7 @@ router.post('/nonmajorlist', function (req, res){
     +' where s.id = ';
 
     for(var i=0; i<split.length;i++) {
-        query += sql + '\'' + id + '\'' + ' AND m.subject_name = ' + '\'' + split[i] + '\'' + ';'
+        query += sql + '\'' + id + '\'' + ' AND n.subject_name = ' + '\'' + split[i] + '\'' + ';'
     }
  
     mysqlDB.query(sql, [], function(error, result) {
