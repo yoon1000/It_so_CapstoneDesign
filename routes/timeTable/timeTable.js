@@ -18,7 +18,8 @@ router.post('/time', function(req, res, next) {
     console.log(req.body.id);
     console.log(req.body.semester);
     console.log(req.body.option);
-    var sql = 'select o.subject_name, o.time\n' +
+    var sql = 'set @a :=0; \n' +
+        'select (@a:= @a+1) as idx, o.subject_name, o.time, m.credit\n' +
         'from Open_major_ as o \n' +
         'join majorsubject as m\n' +
         'on o.subject_name = m.subject_name\n' +
@@ -26,10 +27,24 @@ router.post('/time', function(req, res, next) {
         'AND o.required = "전공필수"\n' +
         'AND m.major = "소프트웨어학과"\n' +
         'AND m.semester REGEXP(\'[1-?]\') \n' +
-        'AND o.time not REGEXP(\'?\')';
+        'AND o.time not REGEXP(?)';
+
     mysqlDB.query(sql, [req.body.id,req.body.semester,req.body.option], function(error, result) {
         if(error == null) {
-            console.log(result);
+            var resultStr = JSON.stringify(result);
+            console.log(resultStr);
+            var temp1 = resultStr.replace(/\[/gi ,"");
+            var temp2 = temp1.replace(/]/gi,"");
+            var temp3 = temp2.replace(/}/gi, "");
+            var split = temp3.split("{");
+            //console.log(split);
+            var array= new Array();
+            for(var i=0; i<split.length-1; i++){
+               // var length = split.length-1;
+                array[i] = split[i+2];
+            }
+            console.log(array);
+
             res.json({
                 "code" : 200,
                 "result" : result

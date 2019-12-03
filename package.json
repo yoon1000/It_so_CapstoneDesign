@@ -11,6 +11,7 @@
     "cookie-parser": "^1.4.4",
     "ejs": "^2.7.2",
     "express": "^4.17.1",
+    "http-errors": "latest",
     "jade": "^1.11.0",
     "joi": "^14.3.0",
     "jsonwebtoken": "^8.4.0",
@@ -21,8 +22,7 @@
     "node-mysql": "^0.4.2",
     "nodemailer": "^6.1.1",
     "swagger-jsdoc": "^3.4.0",
-    "swagger-ui-express": "^4.1.2",
-    "http-errors": "latest"
+    "swagger-ui-express": "^4.1.2"
   },
   "devDependencies": {},
   "author": "",

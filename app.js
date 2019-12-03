@@ -48,7 +48,6 @@ app.use('/studentInfo/subject', subjectRouter);
 app.use('/studentInfo/main', mainRouter);
 app.use('/timeTable/timeTable', timeTableRouter);
 
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
