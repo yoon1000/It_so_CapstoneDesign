@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var subjectRouter = require('./routes/studentInfo/subject');
 var mainRouter = require('./routes/studentInfo/main');
+var timeTableRouter = require('./routes/timeTable/timeTable');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -45,6 +46,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/studentInfo/subject', subjectRouter);
 app.use('/studentInfo/main', mainRouter);
+app.use('/timeTable/timeTable', timeTableRouter);
 
 
 // catch 404 and forward to error handler
