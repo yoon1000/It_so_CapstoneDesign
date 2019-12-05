@@ -97,39 +97,6 @@ router.post('/majorlist/major', function(req, res, next) {
     });
 });
 
-/*/!*!/studentInfo/subject/majorlist
-클라이언트로 부터 받은 해당 학생의 학적정보 db에 반영하기*!/
-router.post('/majorlist', function (req, res){
-     var id = req.body.id;
-    //var subject_list = req.body.subject;//학생이 들은 과목들
-    var length = Object.keys(subject_list).length;//과목의 개수
-    var subject_list_toString = subject_list.toString();
-    var query ="";
-   
-    var sql = 'insert into Student_majorsubject' +
-        ' select distinct s.id, s.school, s.major, s.num, m.subject_name, m.required, m.credit, m.semester' +
-        ' from Student as s' +
-        ' join majorsubject as m' +
-        ' on s.major = m.major' +
-        ' where s.id = ? AND (m.subject_name = ?'+' OR m.subject_name =? '+ ' OR m.subject_name = ? )'+';';
-
-    mysqlDB.query(sql, [id,req.body.subject[0],req.body.subject[1],req.body.subject[2]], function(error, result) {
-        if(error == null) {
-            res.json({
-                "code" : 200,
-                "result" : result
-            });
-        }
-        else {
-            console.log(error);
-            res.json({
-                "code" : 400,
-                "result" : "failed"
-            });
-        }
-    });
-
-});*/
 
 router.post('/majorlist', function (req, res){
     var id = req.body.id;
@@ -240,6 +207,92 @@ router.post('/completed_majorsubject', function(req, res, next) {
         }
     });
 
+});
+
+
+/**
+ * user가 들었던 <전공과목>을 삭제하는 api
+ Student_majorsubject 에서 id와 삭제하고 싶은 과목 리스트(deleteMajorlist)를 받으면 삭제해준다.
+ */
+
+router.delete('/StudentMajorlist', function (res, req, next) {
+    var id = req.body.id;
+    var subject_list = req.body.deleteMajorlist;//학생이 들은 과목들
+    //var length = Object.keys(req.body.length).length;//과목의 개수
+    var query ="";
+    console.log(subject_list);
+
+    var temp1 = subject_list.replace("[" ,"");
+    //console.log(aa);
+    var temp2 = temp1.replace(']',"");
+    var temp3 = temp2.replace(/"/gi, "");
+    //console.log(temp3);
+    var split = temp3.split(',');
+
+
+    var sql = 'delete from Student_majorsubject where id = ';
+
+    for(var i=0; i<split.length;i++) {
+        query += sql + '\'' + id + '\'' + ' AND subject_name = ' + '\'' + split[i] + '\'' + ';'
+    }
+    //console.log(query);
+
+    mysqlDB.query(query, [], function(error, result) {
+        if(error == null) {
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else {
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    });
+});
+
+
+/**
+ * user가 들었던 <교양과목>을 삭제하는 api
+ * 클라이언트로부터 id(string), deleteNonmajorlist 가 오면 해당 과목을 지워준다.
+ */
+
+router.delete('/StudentNonmajorlist', function (res, req){
+    var id = req.body.id;
+    var nonmajor_list = req.body.deleteNonmajorlist;//학생이 들은 과목들
+    //var length = Object.keys(nonmajor_list).length;//과목의 개수
+    var query = "";
+
+    var temp1 = nonmajor_list.replace("[" ,"");
+    var temp2 = temp1.replace(']',"");
+    var temp3 = temp2.replace(/"/gi, "");
+    var split = temp3.split(',');
+
+
+    var sql = 'delete from Student_nonmajorsubject where id =';
+
+    for(var i=0; i<split.length;i++) {
+        query += sql + '\'' + id + '\'' + ' AND subject_name = ' + '\'' + split[i] + '\'' + ';'
+    }
+    //console.log(query);
+    mysqlDB.query(query, [], function(error, result) {
+        if(error == null) {
+            res.json({
+                "code" : 200,
+                "result" : "success"
+            });
+        }
+        else {
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    });
 });
 
 module.exports = router;
