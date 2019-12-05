@@ -11,26 +11,6 @@ router.get('/', function(req, res, next) {
     res.render('subject');
 });
 
-//POST /studentInfo/subject/time
-router.post('/time', function(req, res, next) {
-    var sql = 'select time from Open_major_ where subject_name=?;';
-    mysqlDB.query(sql, [req.body.subject_name], function(error, result) {
-        if(error == null) {
-            res.json({
-                "code" : 200,
-                "result" : result
-            });
-        }
-        else {
-            console.log(error);
-            res.json({
-                "code" : 400,
-                "result" : "failed"
-            });
-        }
-    });
-});
-
 // /studentInfo/subject/majorlist
 /* 전공 클릭시 학과 리스트 가져오기 */
 router.get('/majorlist', function(req, res, next) {
@@ -79,6 +59,7 @@ router.post('/nonmajorlist', function(req, res, next) {
 // /studentInfo/subject/majorlist/major
 /* 학적추가에서 전공클릭시 전체 수강하지 않은 전공과목 가져오기 */
 router.post('/majorlist/major', function(req, res, next) {
+    console.log(req.body.id);
     var sql = 'select subject_name from majorsubject where subject_name NOT IN (select subject_name from Student_majorsubject where id = ?) AND major = ?';
     mysqlDB.query(sql, [req.body.id, req.body.major], function(error, result) {
         if(error == null) {
