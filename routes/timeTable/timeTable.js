@@ -49,8 +49,6 @@ router.post('/time', function(req, res, next) {
     mysqlDB.query(sql, [req.body.id,req.body.semester,req.body.option], function(error, result) {
         if(error == null) {
              console.log("result1: ", result);
-            // console.log("resultLength: ", result.length);
-            // console.log("resultTime: ", result[0].time);
 
             for(var i=0; i<result.length; i++) {//반환된 과목 수 만큼
                 var split = result[i].time.split(","); //한 과목당 며칠인지
@@ -120,7 +118,7 @@ router.post('/time', function(req, res, next) {
                     }
                 }
 
-                if(selectArray.length==5){
+                if(selectArray.length==4){
                     break;
                 }
             }
@@ -257,7 +255,7 @@ router.post('/time', function(req, res, next) {
                     }
                 }
 
-                if (selectArray2.length == 5) {
+                if (selectArray2.length == 4) {
                     break;
                 }
             }
@@ -282,13 +280,14 @@ router.post('/time', function(req, res, next) {
             }
 
             for(var a=0; a<result.length; a++){
+
                 console.log(a);
                 console.log(iArray.includes(a));
                 console.log(iArray2.includes(a));
 
-                if(iArray.includes(a)==false && iArray2.includes(a)==false) {
+                if(iArray.includes(a)==false && iArray2.includes(a)==false) {//시간표1,2와 안겹칠 때
                     console.log(result[a].subject_name);
-                    if (selectArray3.includes(result[a].subject_name) == false) {
+                    if (selectArray3.includes(result[a].subject_name) == false) {//이름 안겹칠 때
                         selectArray3.push(result[a].subject_name);
                         selecttimeArray3.push(result[a].time);
                         var split = result[a].time.split(","); //한 과목당 며칠인지
@@ -327,6 +326,10 @@ router.post('/time', function(req, res, next) {
                         }
                         console.log(selectArray3);
                     }
+                }
+                if (selectArray3.length == 4) {
+                    break;
+                    console("break!!!!!!!!!!!")
                 }
             }
             for (var i = 0; i < result.length; i++) {//반환된 과목 수 만큼
@@ -375,14 +378,21 @@ router.post('/time', function(req, res, next) {
                                     if (selectArray3.includes(result[i].subject_name)) { //같은 과목이 이미 있을 때
                                         break;
                                     } else {
-                                        for (var m = 0; m < split.length; m++) {
-                                            for (var n = start[m]; n < end[m] + 1; n++) {
-                                                timetableArray[day[m]][n] = true; //해당 시간을 true로 바꿔주고
+                                        console.log("selectArray3Length: ", selectArray3.length);
+                                        if (selectArray3.length == 4) {
+                                            break;
+                                            console("break!!!!!!!!!!!")
+                                        }else {
+                                            for (var m = 0; m < split.length; m++) {
+                                                for (var n = start[m]; n < end[m] + 1; n++) {
+                                                    timetableArray[day[m]][n] = true; //해당 시간을 true로 바꿔주고
+                                                }
                                             }
+                                            selectArray3.push(result[i].subject_name); //해당 과목 이름을 selectArray2에 넣는다.
+                                            selecttimeArray3.push(result[i].time);
+                                            console.log("selectArray3: ", selectArray3);
+                                            console.log("selectArray3Length: ", selectArray3.length);
                                         }
-                                        selectArray3.push(result[i].subject_name); //해당 과목 이름을 selectArray2에 넣는다.
-                                        selecttimeArray3.push(result[i].time);
-                                        console.log("selectArray3: ", selectArray3);
                                     }
                                 }
                             }
@@ -391,10 +401,6 @@ router.post('/time', function(req, res, next) {
                             console.log("selectArray3: ", selectArray3);
                         }
                     }
-                }
-
-                if (selectArray3.length == 5) {
-                    break;
                 }
             }
             var result4 = new Array();
