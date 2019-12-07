@@ -293,7 +293,7 @@ router.post('/time', function(req, res, next) {
 
             for(var a=0; a<result.length; a++){
 
-                if(selectArray.includes("&")){
+                if(selectArray2.includes("&")){
                     for(i=0; i<4; i++){
                         selectArray3.push("&");
                         selecttimeArray3.push("&");
