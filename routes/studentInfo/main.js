@@ -9,9 +9,10 @@ router.get('/', function(req, res, next) {
     res.render('main');
 });
 
-router.get('/required_majorCredit', function(req, res, next) {
-    var sql = 'select distinct required_credit_major from Graduation_requirement where major = "소프트웨어학과";';
-    mysqlDB.query(sql, [],function(error, result) {
+router.post('/required_majorCredit', function(req, res, next) {
+    var num = req.body.num.substring(0,4);
+    var sql = 'select distinct required_credit_major from Graduation_requirement where major = ? And admission_num=?;';
+    mysqlDB.query(sql, [req.body.major, num],function(error, result) {
         if(error == null) {
             console.log(result);
             res.json({
@@ -29,9 +30,10 @@ router.get('/required_majorCredit', function(req, res, next) {
     })
 });
 
-router.get('/required_nonmajorCredit', function(req, res, next) {
-    var sql = 'select distinct required_credit_non_major from Graduation_requirement where major="소프트웨어학과";';
-    mysqlDB.query(sql, [],function(error, result) {
+router.post('/required_nonmajorCredit', function(req, res, next) {
+    var num = req.body.num.substring(0,4);
+    var sql = 'select distinct required_credit_non_major from Graduation_requirement where major = ? And admission_num=?;';
+    mysqlDB.query(sql, [req.body.major, num],function(error, result) {
         if(error == null) {
             console.log(result);
             res.json({
