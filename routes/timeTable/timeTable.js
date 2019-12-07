@@ -23,7 +23,6 @@ router.post('/time', function(req, res, next) {
     for(var j=0; j<5; j++){
         for(var k=0; k<48; k++){
             timetableArray[j][k] = false;
-            // console.log("timetableArray: ", timetableArray);
         }
     }
 
@@ -48,7 +47,7 @@ router.post('/time', function(req, res, next) {
 
     mysqlDB.query(sql, [req.body.id,req.body.semester,req.body.option], function(error, result) {
         if(error == null) {
-             console.log("result1: ", result);
+            console.log("result1: ", result);
 
             for(var i=0; i<result.length; i++) {//반환된 과목 수 만큼
                 var split = result[i].time.split(","); //한 과목당 며칠인지
@@ -88,8 +87,6 @@ router.post('/time', function(req, res, next) {
                     // console.log("end: ", end[j]);
 
                     for (var k = start[j]; k < end[j]+1; k++) {//한칸당
-                        //console.log("k: ", k);
-                        console.log("timetableArray[day[j][k]: ", timetableArray[day[j]][k]);
                         if (timetableArray[day[j]][k] == false) {//겹치는 것이 없으면
                             if(k==end[j]){
                                 select++;
@@ -122,6 +119,14 @@ router.post('/time', function(req, res, next) {
                     break;
                 }
             }
+
+            if(selectArray.length<4){
+                while(selectArray.length<4){
+                    selectArray.push("&");
+                    selecttimeArray.push("&");
+                }
+            }
+
             var result2 = new Array();
             for(var i=0; i<selectArray.length; i++){
                 result2[i] = new Array();
@@ -133,7 +138,7 @@ router.post('/time', function(req, res, next) {
 
             console.log("result2: ", result2);
 
-           /// 두번째 추천 시간표!!
+            /// 두번째 추천 시간표!!
             var selectArray2 = new Array();
             var selecttimeArray2 = new Array();
             var iArray2 = new Array();
@@ -145,20 +150,25 @@ router.post('/time', function(req, res, next) {
             }
 
             for(var a=0; a<selectArray.length; a++){
-                console.log(a);
-                console.log(iArray.includes(a));
 
-                if(iArray.includes(a)==false) {
-                    if (selecttimeArray2.includes(result[a].time) == false) {
+                if(selectArray.includes("&")){
+                    for(i=0; i<4; i++){
+                        selectArray2.push("&");
+                        selecttimeArray2.push("&");
+                        iArray2.push("&");
+                    }
+                    break;
+                }
+
+                else if(iArray.includes(a)==false) { //첫번째에 포함되지 않은 과목
+                    if (selecttimeArray2.includes(result[a].time) == false) { //시간이 겹치지않게
                         console.log(result[a].subject_name);
                         selectArray2.push(result[a].subject_name);
                         selecttimeArray2.push(result[a].time);
                         iArray2.push(a);
                         var split = result[a].time.split(","); //한 과목당 며칠인지
-                        console.log("split: ", split);
                         var replaceTime = result[a].time.replace(/,/gi, "/");
                         var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
-                        console.log("split2: ", split2);
                         var day = new Array();
                         var start = new Array();
                         var end = new Array();
@@ -175,13 +185,10 @@ router.post('/time', function(req, res, next) {
                             } else if (split2[(3 * j)] == "금") {
                                 day[j] = 4
                             }
-                            console.log("day: ", day);
                             //시작시간(칸)
                             start[j] = parseInt(split2[(3 * j) + 1]);
-                            console.log("start: ", start);
                             //끝나는 시간(칸)
                             end[j] = parseInt(split2[(3 * j) + 2]);
-                            console.log("end: ", end);
                         }
                         for (var m = 0; m < split.length; m++) {
                             for (var n = start[m]; n < end[m] + 1; n++) {
@@ -192,75 +199,78 @@ router.post('/time', function(req, res, next) {
                     }
                 }
             }
-            for (var i = 0; i < result.length; i++) {//반환된 과목 수 만큼
-                var split = result[i].time.split(","); //한 과목당 며칠인지
-                console.log("split: ", split);
-                var replaceTime = result[i].time.replace(/,/gi, "/");
-                var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
-                console.log("split2: ", split2);
-                var day = new Array();
-                var start = new Array();
-                var end = new Array();
-                for (var j = 0; j < split.length; j++) {
-                    //day: 요일을 숫자로(배열에 넣기위해)
-                    if (split2[(3 * j)] == "월") {
-                        day[j] = 0
-                    } else if (split2[(3 * j)] == "화") {
-                        day[j] = 1
-                    } else if (split2[(3 * j)] == "수") {
-                        day[j] = 2
-                    } else if (split2[(3 * j)] == "목") {
-                        day[j] = 3
-                    } else if (split2[(3 * j)] == "금") {
-                        day[j] = 4
+
+            if(selectArray2.includes("&")==false) {
+                for (var i = 0; i < result.length; i++) {//반환된 과목 수 만큼
+                    var split = result[i].time.split(","); //한 과목당 며칠인지
+                    var replaceTime = result[i].time.replace(/,/gi, "/");
+                    var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
+                    var day = new Array();
+                    var start = new Array();
+                    var end = new Array();
+                    for (var j = 0; j < split.length; j++) {
+                        //day: 요일을 숫자로(배열에 넣기위해)
+                        if (split2[(3 * j)] == "월") {
+                            day[j] = 0
+                        } else if (split2[(3 * j)] == "화") {
+                            day[j] = 1
+                        } else if (split2[(3 * j)] == "수") {
+                            day[j] = 2
+                        } else if (split2[(3 * j)] == "목") {
+                            day[j] = 3
+                        } else if (split2[(3 * j)] == "금") {
+                            day[j] = 4
+                        }
+                        //시작시간(칸)
+                        start[j] = parseInt(split2[(3 * j) + 1]);
+                        //끝나는 시간(칸)
+                        end[j] = parseInt(split2[(3 * j) + 2]);
                     }
-                    console.log("day: ", day);
-                    //시작시간(칸)
-                    start[j] = parseInt(split2[(3 * j) + 1]);
-                    console.log("start: ", start);
-                    //끝나는 시간(칸)
-                    end[j] = parseInt(split2[(3 * j) + 2]);
-                    console.log("end: ", end);
-                }
 
-                var select = 0;
-                for (var j = 0; j < split.length; j++) {//한요일당
+                    var select = 0;
+                    for (var j = 0; j < split.length; j++) {//한요일당
 
-                    for (var k = start[j]; k < end[j] + 1; k++) {//한칸당
-                        //console.log("k: ", k);
-                        console.log("timetableArray[day[j][k]: ", timetableArray[day[j]][k]);
-                        if (timetableArray[day[j]][k] == false) {//겹치는 것이 없으면
-                            if (k == end[j]) {
-                                select++;
-                                console.log("select: ", select);
-                                if (select == split.length) { //모든 요일 모든 시간을 비교해봤을 때 겹치지 않았을 경우
-                                    //console.log("select: ", select);
-                                    if (selectArray2.includes(result[i].subject_name)) { //같은 과목이 이미 있을 때
-                                        break;
-                                    } else {
-                                        for (var m = 0; m < split.length; m++) {
-                                            for (var n = start[m]; n < end[m] + 1; n++) {
-                                                timetableArray[day[m]][n] = true; //해당 시간을 true로 바꿔주고
+                        for (var k = start[j]; k < end[j] + 1; k++) {//한칸당
+                            if (timetableArray[day[j]][k] == false) {//겹치는 것이 없으면
+                                if (k == end[j]) {
+                                    select++;
+                                    console.log("select: ", select);
+                                    if (select == split.length) { //모든 요일 모든 시간을 비교해봤을 때 겹치지 않았을 경우
+                                        if (selectArray2.includes(result[i].subject_name)) { //같은 과목이 이미 있을 때
+                                            break;
+                                        } else {
+                                            for (var m = 0; m < split.length; m++) {
+                                                for (var n = start[m]; n < end[m] + 1; n++) {
+                                                    timetableArray[day[m]][n] = true; //해당 시간을 true로 바꿔주고
+                                                }
                                             }
+                                            selectArray2.push(result[i].subject_name); //해당 과목 이름을 selectArray2에 넣는다.
+                                            selecttimeArray2.push(result[i].time);
+                                            iArray2.push(i);
+                                            console.log("selectArray2: ", selectArray2);
                                         }
-                                        selectArray2.push(result[i].subject_name); //해당 과목 이름을 selectArray2에 넣는다.
-                                        selecttimeArray2.push(result[i].time);
-                                        iArray2.push(i);
-                                        console.log("selectArray2: ", selectArray2);
                                     }
                                 }
+                            } else {
+                                break;
+                                console.log("selectArray2: ", selectArray2);
                             }
-                        } else {
-                            break;
-                            console.log("selectArray2: ", selectArray2);
                         }
                     }
-                }
 
-                if (selectArray2.length == 4) {
-                    break;
+                    if (selectArray2.length == 4) {
+                        break;
+                    }
                 }
             }
+
+            if(selectArray2.length<4){
+                while(selectArray2.length<4){
+                    selectArray2.push("&");
+                    selecttimeArray2.push("&");
+                }
+            }
+
             var result3 = new Array();
             for (var i = 0; i < selectArray2.length; i++) {
                 result3[i] = new Array();
@@ -283,21 +293,23 @@ router.post('/time', function(req, res, next) {
 
             for(var a=0; a<result.length; a++){
 
-                console.log(a);
-                console.log(iArray.includes(a));
-                console.log(iArray2.includes(a));
+                if(selectArray.includes("&")){
+                    for(i=0; i<4; i++){
+                        selectArray3.push("&");
+                        selecttimeArray3.push("&");
+                    }
+                    break;
+                }
 
-                if(iArray.includes(a)==false && iArray2.includes(a)==false) {//시간표1,2와 안겹칠 때
+                else if(iArray.includes(a)==false && iArray2.includes(a)==false) {//시간표1,2와 안겹칠 때
                     console.log(result[a].subject_name);
                     if (selectArray3.includes(result[a].subject_name) == false) {//이름 안겹칠 때
                         if (selecttimeArray3.includes(result[a].time) == false) {
                             selectArray3.push(result[a].subject_name);
                             selecttimeArray3.push(result[a].time);
                             var split = result[a].time.split(","); //한 과목당 며칠인지
-                            console.log("split: ", split);
                             var replaceTime = result[a].time.replace(/,/gi, "/");
                             var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
-                            console.log("split2: ", split2);
                             var day = new Array();
                             var start = new Array();
                             var end = new Array();
@@ -314,13 +326,10 @@ router.post('/time', function(req, res, next) {
                                 } else if (split2[(3 * j)] == "금") {
                                     day[j] = 4
                                 }
-                                console.log("day: ", day);
                                 //시작시간(칸)
                                 start[j] = parseInt(split2[(3 * j) + 1]);
-                                console.log("start: ", start);
                                 //끝나는 시간(칸)
                                 end[j] = parseInt(split2[(3 * j) + 2]);
-                                console.log("end: ", end);
                             }
                             for (var m = 0; m < split.length; m++) {
                                 for (var n = start[m]; n < end[m] + 1; n++) {
@@ -336,77 +345,79 @@ router.post('/time', function(req, res, next) {
                     console("break!!!!!!!!!!!")
                 }
             }
-            for (var i = 0; i < result.length; i++) {//반환된 과목 수 만큼
-                var split = result[i].time.split(","); //한 과목당 며칠인지
-                console.log("split: ", split);
-                var replaceTime = result[i].time.replace(/,/gi, "/");
-                var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
-                console.log("split2: ", split2);
-                var day = new Array();
-                var start = new Array();
-                var end = new Array();
-                for (var j = 0; j < split.length; j++) {
-                    //day: 요일을 숫자로(배열에 넣기위해)
-                    if (split2[(3 * j)] == "월") {
-                        day[j] = 0
-                    } else if (split2[(3 * j)] == "화") {
-                        day[j] = 1
-                    } else if (split2[(3 * j)] == "수") {
-                        day[j] = 2
-                    } else if (split2[(3 * j)] == "목") {
-                        day[j] = 3
-                    } else if (split2[(3 * j)] == "금") {
-                        day[j] = 4
+            if(selectArray3.includes("&")==false) {
+                for (var i = 0; i < result.length; i++) {//반환된 과목 수 만큼
+                    var split = result[i].time.split(","); //한 과목당 며칠인지
+                    var replaceTime = result[i].time.replace(/,/gi, "/");
+                    var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
+                    var day = new Array();
+                    var start = new Array();
+                    var end = new Array();
+                    for (var j = 0; j < split.length; j++) {
+                        //day: 요일을 숫자로(배열에 넣기위해)
+                        if (split2[(3 * j)] == "월") {
+                            day[j] = 0
+                        } else if (split2[(3 * j)] == "화") {
+                            day[j] = 1
+                        } else if (split2[(3 * j)] == "수") {
+                            day[j] = 2
+                        } else if (split2[(3 * j)] == "목") {
+                            day[j] = 3
+                        } else if (split2[(3 * j)] == "금") {
+                            day[j] = 4
+                        }
+                        //시작시간(칸)
+                        start[j] = parseInt(split2[(3 * j) + 1]);
+                        //끝나는 시간(칸)
+                        end[j] = parseInt(split2[(3 * j) + 2]);
                     }
-                    console.log("day: ", day);
-                    //시작시간(칸)
-                    start[j] = parseInt(split2[(3 * j) + 1]);
-                    console.log("start: ", start);
-                    //끝나는 시간(칸)
-                    end[j] = parseInt(split2[(3 * j) + 2]);
-                    console.log("end: ", end);
-                }
 
-                var select = 0;
-                for (var j = 0; j < split.length; j++) {//한요일당
+                    var select = 0;
+                    for (var j = 0; j < split.length; j++) {//한요일당
 
-                    for (var k = start[j]; k < end[j] + 1; k++) {//한칸당
-                        //console.log("k: ", k);
-                        console.log("timetableArray[day[j][k]: ", timetableArray[day[j]][k]);
-                        if (timetableArray[day[j]][k] == false) {//겹치는 것이 없으면
-                            if (k == end[j]) {
-                                select++;
-                                console.log("select: ", select);
-                                if (select == split.length) { //모든 요일 모든 시간을 비교해봤을 때 겹치지 않았을 경우
-                                    //console.log("select: ", select);
-                                    if (selectArray3.includes(result[i].subject_name)) { //같은 과목이 이미 있을 때
-                                        break;
-                                    } else {
-                                        console.log("selectArray3Length: ", selectArray3.length);
-                                        if (selectArray3.length == 4) {
+                        for (var k = start[j]; k < end[j] + 1; k++) {//한칸당
+                            if (timetableArray[day[j]][k] == false) {//겹치는 것이 없으면
+                                if (k == end[j]) {
+                                    select++;
+                                    console.log("select: ", select);
+                                    if (select == split.length) { //모든 요일 모든 시간을 비교해봤을 때 겹치지 않았을 경우
+                                        if (selectArray3.includes(result[i].subject_name)) { //같은 과목이 이미 있을 때
                                             break;
-                                            console("break!!!!!!!!!!!")
-                                        }else {
-                                            for (var m = 0; m < split.length; m++) {
-                                                for (var n = start[m]; n < end[m] + 1; n++) {
-                                                    timetableArray[day[m]][n] = true; //해당 시간을 true로 바꿔주고
-                                                }
-                                            }
-                                            selectArray3.push(result[i].subject_name); //해당 과목 이름을 selectArray2에 넣는다.
-                                            selecttimeArray3.push(result[i].time);
-                                            console.log("selectArray3: ", selectArray3);
+                                        } else {
                                             console.log("selectArray3Length: ", selectArray3.length);
+                                            if (selectArray3.length == 4) {
+                                                break;
+                                                console("break!!!!!!!!!!!")
+                                            } else {
+                                                for (var m = 0; m < split.length; m++) {
+                                                    for (var n = start[m]; n < end[m] + 1; n++) {
+                                                        timetableArray[day[m]][n] = true; //해당 시간을 true로 바꿔주고
+                                                    }
+                                                }
+                                                selectArray3.push(result[i].subject_name); //해당 과목 이름을 selectArray2에 넣는다.
+                                                selecttimeArray3.push(result[i].time);
+                                                console.log("selectArray3: ", selectArray3);
+                                                console.log("selectArray3Length: ", selectArray3.length);
+                                            }
                                         }
                                     }
                                 }
+                            } else {
+                                break;
+                                console.log("selectArray3: ", selectArray3);
                             }
-                        } else {
-                            break;
-                            console.log("selectArray3: ", selectArray3);
                         }
                     }
                 }
             }
+
+            if(selectArray3.length<4){
+                while(selectArray3.length<4){
+                    selectArray3.push("&");
+                    selecttimeArray3.push("&");
+                }
+            }
+
             var result4 = new Array();
             for (var i = 0; i < selectArray3.length; i++) {
                 result4[i] = new Array();
