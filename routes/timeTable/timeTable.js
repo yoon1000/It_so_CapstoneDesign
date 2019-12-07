@@ -190,6 +190,7 @@ router.post('/time', function(req, res, next) {
                         for (var m = 0; m < split.length; m++) {
                             for (var n = start[m]; n < end[m] + 1; n++) {
                                 if(timetableArray[day[m]][n]==true) {
+                                    m=split.length;
                                     break;
                                 }
                                 if(m==split.length-1){
@@ -342,9 +343,12 @@ router.post('/time', function(req, res, next) {
                             for (var m = 0; m < split.length; m++) {
                                 for (var n = start[m]; n < end[m] + 1; n++) {
                                     if(timetableArray[day[m]][n]==true) {
+                                        console.log("break!!!!!!!!!1");
+                                        m=split.length;
                                         break;
                                     }
-                                    if(m==split.length-1){
+                                    if(m==split.length-1 && n==end[m]){
+                                        console.log("LAst!!!!!!!!!!");
                                         for(var p = 0; p < split.length; p++){
                                             for (var q = start[p]; q < end[p] + 1; q++) {
                                                 timetableArray[day[p]][q] = true; //해당 시간을 true로 바꿔주고
@@ -361,7 +365,6 @@ router.post('/time', function(req, res, next) {
                 }
                 if (selectArray3.length == 4) {
                     break;
-                    console("break!!!!!!!!!!!")
                 }
             }
             if(selectArray3.includes("&")==false) {
@@ -405,7 +408,6 @@ router.post('/time', function(req, res, next) {
                                             console.log("selectArray3Length: ", selectArray3.length);
                                             if (selectArray3.length == 4) {
                                                 break;
-                                                console("break!!!!!!!!!!!")
                                             } else {
                                                 for (var m = 0; m < split.length; m++) {
                                                     for (var n = start[m]; n < end[m] + 1; n++) {
