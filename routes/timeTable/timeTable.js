@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 //timeTable/time
 //월공강 금공강 옵션 해당 과목 불러오기
 // 1.개설과목중에 2.전공과목의 학기와 아이디를 가져오고 3.사용자가 들은 과목은 빼고
-// 4.전공필수만 5.소프트웨어학과만 6.학기가 내가 선택한 학기와 그 이전학기들까지 7.옵션(월공강)
+// 5.소프트웨어학과만 6.학기가 내가 선택한 학기와 그 이전학기들까지 7.옵션(월공강)
 router.post('/time', function(req, res, next) {
     // 시간표 다차원배열만들기(5*48)
     var timetableArray = new Boolean();
@@ -43,6 +43,7 @@ router.post('/time', function(req, res, next) {
         'AND m.major = "소프트웨어학과"\n' +
         'AND m.semester REGEXP(\'[1-?]\') \n' +
         'AND o.time not REGEXP(?)\n' +
+        'AND o.subject_name not REGEXP("집중교육")\n' +
         'Order by o.required DESC, subject_name';
 
     mysqlDB.query(sql, [req.body.id,req.body.semester,req.body.option], function(error, result) {
