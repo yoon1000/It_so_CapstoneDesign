@@ -374,7 +374,7 @@ router.post('/time', function(req, res, next) {
                                 select++;
                                 console.log("select: ", select);
                                 if (select == split.length) { //모든 요일 모든 시간을 비교해봤을 때 겹치지 않았을 경우
-                                    //console.log("select: ", select);
+                                    console.log("select: ", select);
                                     if (selectArray3.includes(result[i].subject_name)) { //같은 과목이 이미 있을 때
                                         break;
                                     } else {
