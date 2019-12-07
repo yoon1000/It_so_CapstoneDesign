@@ -191,6 +191,31 @@ router.post('/completed_majorsubject', function(req, res, next) {
 });
 
 
+/*/studentInfo/subject/completed_majorsubject
+학생이 들은 교양과목 불러오기*/
+router.post('/completed_nonmajorsubject', function(req, res, next) {
+    var sql = 'select subject_name from Student_nonmajorsubject where id=?;';
+    mysqlDB.query(sql, [req.body.id], function(error, result) {
+        if(error == null) {
+            console.log(result);
+            res.json({
+                "code" : 200,
+                "result" : result
+            });
+        }
+        else{
+            console.log(error);
+            res.json({
+                "code" : 400,
+                "result" : "failed"
+            });
+        }
+    });
+
+});
+
+
+
 /**
  * user가 들었던 <전공과목>을 삭제하는 api
  Student_majorsubject 에서 id와 삭제하고 싶은 과목 리스트(deleteMajorlist)를 받으면 삭제해준다.
