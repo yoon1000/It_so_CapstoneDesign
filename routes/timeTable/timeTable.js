@@ -187,24 +187,29 @@ router.post('/time', function(req, res, next) {
                             //끝나는 시간(칸)
                             end[j] = parseInt(split2[(3 * j) + 2]);
                         }
+                        var out = 0;
                         for (var m = 0; m < split.length; m++) {
                             for (var n = start[m]; n < end[m] + 1; n++) {
-                                if(timetableArray[day[m]][n]==true) {
+                                if(timetableArray[day[m]][n]==true) { //겹치면 이중 for문 탈출
                                     m=split.length;
                                     break;
                                 }
-                                if(m==split.length-1){
-                                    for(var p = 0; p < split.length; p++){
-                                        for (var q = start[p]; q < end[p] + 1; q++) {
-                                            timetableArray[day[p]][q] = true; //해당 시간을 true로 바꿔주고
-                                        }
-                                    }
-                                    selectArray2.push(result[a].subject_name);
-                                    selecttimeArray2.push(result[a].time);
-                                    iArray2.push(i);
+                                if(m==split.length-1){ //true없이 끝까지 왔으면
+                                     out = 1;
                                 }
                             }
                         }
+                        if(out==1) {
+                            for (var p = 0; p < split.length; p++) {
+                                for (var q = start[p]; q < end[p] + 1; q++) {
+                                    timetableArray[day[p]][q] = true; //해당 시간을 true로 바꿔주고
+                                }
+                            }
+                            selectArray2.push(result[a].subject_name);
+                            selecttimeArray2.push(result[a].time);
+                            iArray2.push(i);
+                        }
+
                         console.log(selectArray2);
                     }
                 }
@@ -340,25 +345,28 @@ router.post('/time', function(req, res, next) {
                                 end[j] = parseInt(split2[(3 * j) + 2]);
                             }
 
+                            var out = 0;
                             for (var m = 0; m < split.length; m++) {
                                 for (var n = start[m]; n < end[m] + 1; n++) {
-                                    if(timetableArray[day[m]][n]==true) {
-                                        console.log("break!!!!!!!!!1");
+                                    if(timetableArray[day[m]][n]==true) { //겹치면 이중 for문 탈출
                                         m=split.length;
                                         break;
                                     }
-                                    if(m==split.length-1 && n==end[m]){
-                                        console.log("LAst!!!!!!!!!!");
-                                        for(var p = 0; p < split.length; p++){
-                                            for (var q = start[p]; q < end[p] + 1; q++) {
-                                                timetableArray[day[p]][q] = true; //해당 시간을 true로 바꿔주고
-                                            }
-                                        }
-                                        selectArray3.push(result[a].subject_name);
-                                        selecttimeArray3.push(result[a].time);
+                                    if(m==split.length-1){ //true없이 끝까지 왔으면
+                                        out = 1;
                                     }
                                 }
                             }
+                            if(out==1) {
+                                for (var p = 0; p < split.length; p++) {
+                                    for (var q = start[p]; q < end[p] + 1; q++) {
+                                        timetableArray[day[p]][q] = true; //해당 시간을 true로 바꿔주고
+                                    }
+                                }
+                                selectArray3.push(result[a].subject_name);
+                                selecttimeArray3.push(result[a].time);
+                            }
+
                             console.log(selectArray3);
                         }
                     }
