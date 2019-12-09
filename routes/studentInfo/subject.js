@@ -221,7 +221,9 @@ router.post('/completed_nonmajorsubject', function(req, res, next) {
  Student_majorsubject 에서 id와 삭제하고 싶은 과목 리스트(deleteMajorlist)를 받으면 삭제해준다.
  */
 
-router.delete('/StudentMajorlist', function (res, req, next) {
+router.delete('/deleteMajorlist', function (res, req, next) {
+    console.log(req.body.id);
+    console.log(req.body.deleteMajorlist);
     var id = req.body.id;
     var subject_list = req.body.deleteMajorlist;//학생이 들은 과목들
     //var length = Object.keys(req.body.length).length;//과목의 개수
@@ -266,7 +268,7 @@ router.delete('/StudentMajorlist', function (res, req, next) {
  * 클라이언트로부터 id(string), deleteNonmajorlist 가 오면 해당 과목을 지워준다.
  */
 
-router.delete('/StudentNonmajorlist', function (res, req){
+router.delete('/deleteNonmajorlist', function (res, req, next){
     console.log(req.body.id);
     console.log(req.body.deleteNonmajorlist);
     var id = req.body.id;
