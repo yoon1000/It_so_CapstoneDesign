@@ -99,7 +99,7 @@ router.post('/nonmajorCredit', function(req, res, next) {
 // /studentInfo/main/semester
 /* 전공그래프클릭시 학기별 수강하지 않은 전공과목 가져오기 */
 router.post('/semester', function(req, res, next) {
-    var sql = 'select m.subject_name, m.required, m.credit from majorsubject as m where m.subject_name NOT IN (select s.subject_name from Student_majorsubject as s where s.id = ?) AND m.major = ? AND m.semester REGEXP(?)';
+    var sql = 'select subject_name, required, credit from majorsubject as m where subject_name NOT IN (select subject_name from Student_majorsubject where id = ? AND major =?) AND major = ? AND semester REGEXP(?)';
     mysqlDB.query(sql, [req.body.id, req.body.major, req.body.semester], function(error, result) {
         if(error == null) {
             res.json({
