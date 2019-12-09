@@ -267,6 +267,8 @@ router.delete('/StudentMajorlist', function (res, req, next) {
  */
 
 router.delete('/StudentNonmajorlist', function (res, req){
+    console.log(req.body.id);
+    console.log(req.body.deleteNonmajorlist);
     var id = req.body.id;
     var nonmajor_list = req.body.deleteNonmajorlist;//학생이 들은 과목들
     //var length = Object.keys(nonmajor_list).length;//과목의 개수
