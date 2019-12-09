@@ -220,10 +220,7 @@ router.post('/completed_nonmajorsubject', function(req, res, next) {
  * user가 들었던 <전공과목>을 삭제하는 api
  Student_majorsubject 에서 id와 삭제하고 싶은 과목 리스트(deleteMajorlist)를 받으면 삭제해준다.
  */
-
-router.delete('/deleteMajorlist', function (res, req, next) {
-    console.log(req.body.id);
-    console.log(req.body.deleteMajorlist);
+router.post('/deleteMajor', function(req, res, next) {
     var id = req.body.id;
     var subject_list = req.body.deleteMajorlist;//학생이 들은 과목들
     //var length = Object.keys(req.body.length).length;//과목의 개수
@@ -237,22 +234,22 @@ router.delete('/deleteMajorlist', function (res, req, next) {
     //console.log(temp3);
     var split = temp3.split(',');
 
-
     var sql = 'delete from Student_majorsubject where id = ';
 
     for(var i=0; i<split.length;i++) {
         query += sql + '\'' + id + '\'' + ' AND subject_name = ' + '\'' + split[i] + '\'' + ';'
     }
-    //console.log(query);
+    console.log(query);
 
     mysqlDB.query(query, [], function(error, result) {
         if(error == null) {
+            console.log(result);
             res.json({
                 "code" : 200,
                 "result" : result
             });
         }
-        else {
+        else{
             console.log(error);
             res.json({
                 "code" : 400,
@@ -260,15 +257,15 @@ router.delete('/deleteMajorlist', function (res, req, next) {
             });
         }
     });
-});
 
+});
 
 /**
  * user가 들었던 <교양과목>을 삭제하는 api
  * 클라이언트로부터 id(string), deleteNonmajorlist 가 오면 해당 과목을 지워준다.
  */
 
-router.delete('/deleteNonmajorlist', function (res, req, next){
+router.post('/deleteNonmajorlist', function (res, req, next){
     console.log(req.body.id);
     console.log(req.body.deleteNonmajorlist);
     var id = req.body.id;
