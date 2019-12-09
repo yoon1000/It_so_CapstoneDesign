@@ -264,35 +264,36 @@ router.post('/deleteMajor', function(req, res, next) {
  * user가 들었던 <교양과목>을 삭제하는 api
  * 클라이언트로부터 id(string), deleteNonmajorlist 가 오면 해당 과목을 지워준다.
  */
-
-router.post('/deleteNonmajorlist', function (res, req, next){
-    console.log(req.body.id);
-    console.log(req.body.deleteNonmajorlist);
+router.post('/deleteNonmajor', function(req, res, next) {
     var id = req.body.id;
-    var nonmajor_list = req.body.deleteNonmajorlist;//학생이 들은 과목들
-    //var length = Object.keys(nonmajor_list).length;//과목의 개수
-    var query = "";
+    var subject_list = req.body.deleteNonmajorlist;//학생이 들은 과목들
+    //var length = Object.keys(req.body.length).length;//과목의 개수
+    var query ="";
+    console.log(subject_list);
 
-    var temp1 = nonmajor_list.replace("[" ,"");
+    var temp1 = subject_list.replace("[" ,"");
+    //console.log(aa);
     var temp2 = temp1.replace(']',"");
     var temp3 = temp2.replace(/"/gi, "");
+    //console.log(temp3);
     var split = temp3.split(',');
 
-
-    var sql = 'delete from Student_nonmajorsubject where id =';
+    var sql = 'delete from Student_nonmajorsubject where id = ';
 
     for(var i=0; i<split.length;i++) {
         query += sql + '\'' + id + '\'' + ' AND subject_name = ' + '\'' + split[i] + '\'' + ';'
     }
-    //console.log(query);
+    console.log(query);
+
     mysqlDB.query(query, [], function(error, result) {
         if(error == null) {
+            console.log(result);
             res.json({
                 "code" : 200,
-                "result" : "success"
+                "result" : result
             });
         }
-        else {
+        else{
             console.log(error);
             res.json({
                 "code" : 400,
