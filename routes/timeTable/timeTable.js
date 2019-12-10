@@ -151,7 +151,7 @@ router.post('/time', function(req, res, next) {
                 }
             }
 
-            for(var a=0; a<selectArray.length; a++){
+            for(var a=0; a<result.length; a++){
 
                 if(selectArray.includes("&")){
                     for(i=0; i<4; i++){
@@ -199,6 +199,7 @@ router.post('/time', function(req, res, next) {
                                 end[j] = parseInt(split2[(3 * j) + 2]);
                             }
                             var out = 0;
+
                             for (var m = 0; m < split.length; m++) {
                                 for (var n = start[m]; n < end[m] + 1; n++) {
                                     if (timetableArray[day[m]][n] == true) { //겹치면 이중 for문 탈출
