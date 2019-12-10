@@ -40,7 +40,7 @@ router.post('/time', function(req, res, next) {
         'join majorsubject as m\n' +
         'on o.subject_name = m.subject_name\n' +
         'where o.subject_name NOT IN (select subject_name from Student_majorsubject where id= ?)\n' +
-        'AND m.major = ?\n' +
+        'AND o.major = ?\n' +
         'AND m.semester REGEXP(\'[1-?]\') \n' +
         'AND o.time not REGEXP(?)\n' +
         'AND o.subject_name not REGEXP("집중교육")\n' +
