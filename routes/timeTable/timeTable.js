@@ -338,7 +338,7 @@ router.post('/time', function(req, res, next) {
                     break;
                 }
 
-                else if(iArray.includes(a)==false && iArray2.includes(a)==false) { //첫번째에 포함되지 않은 과목
+                else if(iArray.includes(a)==false | iArray2.includes(a)==false) { //첫번째에 포함되지 않은 과목
                     console.log(a);
                     console.log(result[a].subject_name);
                     console.log(result[a].time);
