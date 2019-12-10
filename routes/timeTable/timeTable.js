@@ -36,7 +36,7 @@ router.post('/time', function(req, res, next) {
     console.log(req.body.major);
     console.log(req.body.semester);
     console.log(req.body.option);
-    var sql = 'select o.required, o.subject_name, o.time\n' +
+    var sql = 'select distinct o.required, o.subject_name, o.time\n' +
         'from Open_major_ as o \n' +
         'join majorsubject as m\n' +
         'on o.subject_name = m.subject_name\n' +
