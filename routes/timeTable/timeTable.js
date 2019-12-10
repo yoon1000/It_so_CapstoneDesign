@@ -202,15 +202,18 @@ router.post('/time', function(req, res, next) {
                             for (var m = 0; m < split.length; m++) {
                                 for (var n = start[m]; n < end[m] + 1; n++) {
                                     if (timetableArray[day[m]][n] == true) { //겹치면 이중 for문 탈출
+                                        console.log("NOOOOOOOOOOOO");
                                         m = split.length;
                                         break;
                                     }
                                     if (m == split.length - 1) { //true없이 끝까지 왔으면
                                         out = 1;
+                                        console.log("OKKKKKKKK!!");
                                     }
                                 }
                             }
                             if (out == 1) {
+                                console.log("OKKKKKKKK!! OUT=1!!");
                                 for (var p = 0; p < split.length; p++) {
                                     for (var q = start[p]; q < end[p] + 1; q++) {
                                         timetableArray[day[p]][q] = true; //해당 시간을 true로 바꿔주고
