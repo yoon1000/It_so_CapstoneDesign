@@ -231,6 +231,9 @@ router.post('/time', function(req, res, next) {
                         }
                     }
                 }
+                if(selectArray2.length==4){
+                    break;
+                }
             }
 
             if(selectArray2.includes("&")==false) {
@@ -402,6 +405,9 @@ router.post('/time', function(req, res, next) {
                             console.log(selectArray3);
                         }
                     }
+                }
+                if(selectArray3.length==4){
+                    break;
                 }
             }
 
