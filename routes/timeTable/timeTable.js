@@ -47,7 +47,7 @@ router.post('/time', function(req, res, next) {
         'AND o.subject_name not REGEXP("집중교육")\n' +
         'Order by o.required DESC, subject_name';
 
-    mysqlDB.query(sql, [req.body.id,req.bosy.major,req.body.semester,req.body.option], function(error, result) {
+    mysqlDB.query(sql, [req.body.id,req.body.major,req.body.semester,req.body.option], function(error, result) {
         if(error == null) {
             console.log("result1: ", result);
 
