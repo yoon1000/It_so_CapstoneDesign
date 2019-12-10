@@ -167,7 +167,13 @@ router.post('/time', function(req, res, next) {
                     console.log(result[a].subject_name);
                     console.log(result[a].time);
                     if(selectArray2.includes(result[a].subject_name)==false) {
+                        console.log(a);
+                        console.log(result[a].subject_name);
+                        console.log(result[a].time);
                         if (selecttimeArray2.includes(result[a].time) == false) { //시간이 겹치지않게
+                            console.log(a);
+                            console.log(result[a].subject_name);
+                            console.log(result[a].time);
                             var split = result[a].time.split(","); //한 과목당 며칠인지
                             var replaceTime = result[a].time.replace(/,/gi, "/");
                             var split2 = replaceTime.split("/"); //한 과목의 time을 특수문자를 제외하고 그대로 array에 넣기
