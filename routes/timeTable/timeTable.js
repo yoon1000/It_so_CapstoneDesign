@@ -163,6 +163,9 @@ router.post('/time', function(req, res, next) {
                 }
 
                 else if(iArray.includes(a)==false) { //첫번째에 포함되지 않은 과목
+                    console.log(a);
+                    console.log(result[a].subject_name);
+                    console.log(result[a].time);
                     if (selecttimeArray2.includes(result[a].time) == false) { //시간이 겹치지않게
                         var split = result[a].time.split(","); //한 과목당 며칠인지
                         var replaceTime = result[a].time.replace(/,/gi, "/");
