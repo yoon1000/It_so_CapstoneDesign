@@ -219,7 +219,7 @@ router.post('/time', function(req, res, next) {
                                 }
                                 selectArray2.push(result[a].subject_name);
                                 selecttimeArray2.push(result[a].time);
-                                iArray2.push(i);
+                                iArray2.push(a);
                                 console.log(result[a].subject_name);
                                 console.log(result[a].time);
                             }
