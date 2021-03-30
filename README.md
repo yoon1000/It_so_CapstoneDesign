@@ -1,10 +1,24 @@
-# It_so_CapstoneDesign
-9/16 캡스톤디자인 repository 등록
+# About MUSE(Make U Scheduling Expert)
 
-# how to install 
-1. npm clean-install
-2. npm start
+대학생들이 학교별, 학과별로 만족해야하는 졸업요건이 다르고 복잡해 겪는 불편함과 매학기 시간표를 짜야하는 어려움을 해결하기 위해 졸업요건확인기능과 추천시간표 기능을 제공하는 어플리케이션 개발을 목적으로 하며, 학과별 학번별로 교과목, 비교과목의 졸업요건을 쉽게 확인 할 수 있고 매학기 시간표를 짤 때 생기는 고민과 불편함을 덜어주기 위해 자신에게 맞는 추천시간표를 제공해주는 기능을 개발하였다.
 
-# how to use (design template)
-1. npm start
-2. http://localhost:8888/bootstrap/index.html
+# functions of MUSE
+
+1. 졸업요건 확인
+   - 교과졸업요건(전공/교양)
+   - 비교과졸업요건(어학)
+2. 다음학기 시간표 추천
+   - 월공강/금공강/점심시간 보장/오후 수업 위주 와 같은 4가지 옵션을 선택
+   - 학기 선택 옵션
+   - 이미 수강한 과목을 제외하고 다음학기 시간표를 추천해줌
+3. 관리자 페이지
+   - 졸업요건과 과목의 신뢰성 확보
+   - 웹페이지를 통해 csv로 형식에 맞게 업로드
+   - 업로드 된 정보가 DB에 반영 후 사용자에게 적용됨
+
+# Framework & Language
+
+- Web
+  - frontend : android, bootstrap, HTML, CSS, javascript
+  - backend : Node.js
+  - database : Mysql
